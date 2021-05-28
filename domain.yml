@@ -37,9 +37,7 @@ actions:
   - utter_ask_breath_pattern_angry
   - utter_ask_capture_lead
   - utter_ask_connect_live
-  - utter_ask_edwedfewdf
   - utter_ask_email
-  - utter_ask_experience_breath
   - utter_ask_financial_situation
   - utter_ask_first_name
   - utter_ask_gain
@@ -841,7 +839,7 @@ forms:
             type: from_text
         name: perform_testimonial
         utter_on_new_valid_slot: false
-    updatedAt: 1622123169398
+    updatedAt: 1622242170632
   scholarship_form:
     collect_in_botfront: null
     description: null
@@ -1036,6 +1034,7 @@ responses:
     - image: >-
         https://skyschools.org/wp-content/uploads/2020/06/green-research-depression-stress.png
       language: en
+      metadata: null
   utter_0HMv3E0lp:
     - language: en
       metadata: null
@@ -1187,6 +1186,7 @@ responses:
     - image: >-
         https://d9hhrg4mnvzow.cloudfront.net/event.us.artofliving.org/us-en/research/aa6828f1-infographics-1-yale-1_10id0xz0gz0b900t0fo000.png
       language: en
+      metadata: null
   utter_YOnk4IJFa:
     - language: en
       metadata: null
@@ -1282,11 +1282,6 @@ responses:
         forceOpen: false
         linkTarget: _blank
         pageChangeCallbacks: null
-        pageEventCallbacks:
-          pageEvents:
-            - event: mouseover
-              payload: /importance.breath
-              selector: 'div#render-target span.logo.pale-grey > img'
         userInput: show
       quick_replies:
         - payload: /inform
@@ -1318,24 +1313,10 @@ responses:
     - language: en
       metadata: null
       text: Anything else I can help you with?
-  utter_ask_edwedfewdf:
-    - custom: {}
-      language: en
-      metadata: null
   utter_ask_email:
     - language: en
       metadata: null
       text: What is your email?
-  utter_ask_experience_breath:
-    - language: en
-      metadata:
-        forceClose: false
-        forceOpen: false
-        linkTarget: _blank
-        pageChangeCallbacks: null
-        pageEventCallbacks: null
-        userInput: show
-      text: "placeholder for breath video \U0001F3D3\U0001F3A5"
   utter_ask_financial_situation:
     - language: en
       metadata: null
@@ -1866,6 +1847,9 @@ responses:
     - language: en
       metadata: null
       text: Hi!
+    - language: en
+      metadata: null
+      text: Hello
   utter_i1Qif8PaB:
     - language: en
       text: You can call 800.000.0000 to connect to an instructor

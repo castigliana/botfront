@@ -43,4 +43,8 @@ stories:
       - action: utter_6oL6NLH6q
     metadata:
       group: Exceptions
+  - story: try
+    steps: []
+    metadata:
+      group: Exceptions
 rules: []
