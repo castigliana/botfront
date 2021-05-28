@@ -839,7 +839,7 @@ forms:
             type: from_text
         name: perform_testimonial
         utter_on_new_valid_slot: false
-    updatedAt: 1622242170632
+    updatedAt: 1622243364433
   scholarship_form:
     collect_in_botfront: null
     description: null
@@ -1131,6 +1131,17 @@ responses:
         The **Mindfulness** (MBSR) group did not show any significant changes.
   utter_NSfT8viOG:
     - language: en
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks:
+          pageEvents:
+            - event: click
+              payload: /inform
+              selector: 'div#render-target textarea'
+        userInput: show
       quick_replies:
         - title: PST
           type: web_url
@@ -1167,13 +1178,13 @@ responses:
         feel, your mind
 
 
-        We use only 30% of lung capacity
+        We use only **30% of lung capacity**
 
 
-        90% of nutrition comes from breath
+        **90% of nutrition** comes from breath
 
 
-        90% of toxins are eliminated through breath
+        **90% of toxins** are eliminated through breath
   utter_Q2n0XuA0o:
     - language: en
       text: >-

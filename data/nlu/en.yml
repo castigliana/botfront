@@ -1053,6 +1053,7 @@ nlu:
   examples: |
     - I want to register
     - I want to sign up
+    - I would like to take the course
     - how can I register
     - how can I sign up?
     - is there a way to sign up
