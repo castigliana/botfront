@@ -1,0 +1,118 @@
+version: "2.0"
+nlu:
+- intent: chitchat.bye
+  metadata:
+    language: ro
+  examples:
+  - text: |
+      Am spus la revedere
+  - text: |
+      La revedere
+  - text: |
+      La revedere. Deocamdată
+  - text: |
+      Ne vedem mâine
+  - text: |
+      Ne vedem în curând
+  - text: |
+      Pa! Pa
+  - text: |
+      acum pa
+  - text: |
+      asta e la revedere
+  - text: |
+      asta-i tot la revedere
+  - text: |
+      bine multumesc pa
+  - text: |
+      bine pa
+  - text: |
+      bine, ne vedem mai târziu
+  - text: |
+      dispari
+  - text: |
+      du-te la culcare
+  - text: |
+      la revedere ne vedem mai tarziu
+  - text: |
+      la revedere noapte bună
+  - text: |
+      la revedere pentru acum
+  - text: |
+      lasă-mă în pace
+  - text: |
+      mulțumesc pa la pa
+  - text: |
+      ne mai vedem
+  - text: |
+      nu te deranjează la revedere
+  - text: |
+      ok pa
+  - text: |
+      pa
+  - text: |
+      pa la revedere ne vedem curând
+  - text: |
+      pa pa pa ai grija
+  - text: |
+      pa pa, ne mai vedem
+  - text: |
+      poti pleca acum
+  - text: |
+      până la data viitoare
+  - text: |
+      sper sa ne vedem mai tarziu
+  - text: |
+      te văd
+  - text: |
+      trebuie să plec
+  - text: |
+      vorbim mai tarziu
+    metadata:
+      canonical: true
+- intent: chitchat.greet
+  metadata:
+    language: ro
+  examples:
+  - text: |
+      Buna dimineata
+  - text: |
+      Buna ziua
+  - text: |
+      Salut buna dimineata
+  - text: |
+      Salut bună seara
+  - text: |
+      Salutari
+    metadata:
+      canonical: true
+  - text: |
+      buna dimineata acolo
+  - text: |
+      buna din nou
+  - text: |
+      buna seara acolo
+  - text: |
+      bună dimineața și ție
+  - text: |
+      bună dimineața ție
+  - text: |
+      bună seara
+  - text: |
+      bună seara și ție
+  - text: |
+      dupa amiaza
+  - text: |
+      o dimineata buna
+  - text: |
+      o zi buna
+  - text: |
+      sa ai o dimineata grozava
+  - text: |
+      sa aveti o dimineata placuta
+  - text: |
+      seară
+  - text: |
+      te salut
+  - text: |
+      și o bună dimineață pentru tine

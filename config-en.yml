@@ -1,0 +1,36 @@
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 200
+  - name: DucklingEntityExtractor
+    url: 'http://duckling:8000'
+    locale: en_US
+    dimensions:
+      - email
+      - number
+      - date
+      - amount-of-money
+      - phone-number
+  - name: >-
+      rasa_addons.nlu.components.intent_ranking_canonical_example_injector.IntentRankingCanonicalExampleInjector
+  - name: EntitySynonymMapper
+language: en
+
+
+policies:
+  - name: TEDPolicy
+    epochs: 200
+    max_history: 30
+    constrain_similarities: True
+    model_confidence: cosine
+    batch_size:
+      - 32
+      - 64
+  - name: RulePolicy
+  - name: AugmentedMemoizationPolicy

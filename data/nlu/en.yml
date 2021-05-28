@@ -1,0 +1,1154 @@
+version: "2.0"
+nlu:
+- intent: basics.no
+  metadata:
+    language: en
+  examples:
+  - text: |
+      [No]{"entity": "want_meditation_experience", "value": "false"}
+  - text: |
+      [No]{"entity": "want_meditation_experience", "value": "false"}, I don't want
+    metadata:
+      canonical: true
+  - text: |
+      nah
+  - text: |
+      never mind
+  - text: |
+      no
+  - text: |
+      no thanks
+    metadata:
+      canonical: true
+  - text: |
+      nope
+  - text: |
+      not really
+  - text: |
+      please no
+- intent: basics.request_handover
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want to speak to a human
+  - text: |
+      I want to speak to a real person
+  - text: |
+      I want to speak to an instructor
+  - text: |
+      I want to speak with a teacher
+  - text: |
+      I'd like to speak to a human
+  - text: |
+      agent
+  - text: |
+      get me in touch with a person
+  - text: |
+      human needed
+  - text: |
+      human now
+    metadata:
+      canonical: true
+  - text: |
+      instructor
+  - text: |
+      talk to human
+  - text: |
+      teacher
+- intent: basics.stop_or_cancel
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I am not interested
+  - text: |
+      I changed my mind
+  - text: |
+      I don't wanna do that anymore
+  - text: |
+      I want to skip
+  - text: |
+      I would like to experience a meditation
+  - text: |
+      I would like to stop that
+  - text: |
+      I'm not interested
+  - text: |
+      Please stop
+  - text: |
+      abort
+  - text: |
+      better for my wife
+  - text: |
+      cancel
+    metadata:
+      canonical: true
+  - text: |
+      clear
+  - text: |
+      do not proceed
+  - text: |
+      eject
+  - text: |
+      end
+  - text: |
+      exit
+  - text: |
+      for my boss
+  - text: |
+      for my wife
+  - text: |
+      forget about it
+  - text: |
+      is not for me
+  - text: |
+      leave
+  - text: |
+      nevermind
+  - text: |
+      not interested
+  - text: |
+      reset
+  - text: |
+      restart
+  - text: |
+      start over
+  - text: |
+      stop
+  - text: |
+      stop everything
+- intent: basics.yes
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I do
+  - text: |
+      Ok
+  - text: |
+      absolutely
+  - text: |
+      alright
+  - text: |
+      continue
+  - text: |
+      of course
+  - text: |
+      ok
+  - text: |
+      ok then
+  - text: |
+      ok, let's do it
+    metadata:
+      canonical: true
+  - text: |
+      sure
+  - text: |
+      yeah sure
+  - text: |
+      yep
+  - text: |
+      yes
+  - text: |
+      yes, please
+- intent: benefits.meditation
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want to meditate
+  - text: |
+      What are the benefits of meditation?
+  - text: |
+      Why should I meditate
+  - text: |
+      benefits of meditation
+    metadata:
+      canonical: true
+  - text: |
+      how beneficial is meditation
+  - text: |
+      what are the benefits of meditation
+  - text: |
+      why is important to mediate
+  - text: |
+      why should I meditate
+- intent: benefits.sky
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Benefits of kriya
+  - text: |
+      What are the benefits of SKY
+  - text: |
+      What are the benefits of SKY?
+  - text: |
+      What are the benefits of sky
+    metadata:
+      canonical: true
+  - text: |
+      What are the benefits of sky?
+  - text: |
+      benefits of SKY
+  - text: |
+      benefits of happiness program
+  - text: |
+      benefits of kriya
+  - text: |
+      benefits of sky
+  - text: |
+      benefits of sudarshan kriya
+  - text: |
+      benefits of this breath program
+  - text: |
+      benefits of this breathing technique
+  - text: |
+      sky benefits
+  - text: |
+      what are benefits of sky
+  - text: |
+      what are the benefits of SKY
+  - text: |
+      what are the benefits of sky
+- intent: breath.pattern
+  metadata:
+    language: en
+  examples:
+  - text: |
+      It is [fast](breathPattern)
+    metadata:
+      canonical: true
+  - text: |
+      It is [shallow](breathPattern)
+    metadata:
+      canonical: true
+  - text: |
+      My breath is [slow](breathPattern)
+    metadata:
+      canonical: true
+  - text: |
+      [fast](breathPattern)
+  - text: |
+      it is [fast](breathPattern)
+  - text: |
+      [normal](breathPattern)
+    metadata:
+      canonical: true
+  - text: |
+      [rapid](breathPattern)
+    metadata:
+      canonical: true
+  - text: |
+      [short](breathPattern)
+    metadata:
+      canonical: true
+  - text: |
+      [slow](breathPattern)
+  - text: |
+      [soft](breathPattern)
+    metadata:
+      canonical: true
+- intent: breathing.techniques
+  metadata:
+    language: en
+  examples: |
+    - What breathing [techniques](programs) do you recommend
+    - What breathing [techniques](programs) you recommand
+    - What breathing [techniques](programs) you recommend
+    - What is [breathwork](programs)
+- intent: chitchat.bye
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Bye
+  - text: |
+      I must go
+  - text: |
+      I said bye
+  - text: |
+      alright bye
+  - text: |
+      bye
+  - text: |
+      bye bye good night
+  - text: |
+      bye bye see you
+  - text: |
+      bye bye see you soon
+  - text: |
+      bye bye take care
+  - text: |
+      bye for now
+  - text: |
+      bye-bye
+  - text: |
+      get lost
+  - text: |
+      go to bed
+  - text: |
+      good bye
+  - text: |
+      goodbye
+  - text: |
+      goodbye for now
+  - text: |
+      goodbye see you later
+  - text: |
+      hope to see you later
+  - text: |
+      leave me alone
+  - text: |
+      never mind bye
+  - text: |
+      now bye
+  - text: |
+      ok bye
+  - text: |
+      okay bye
+  - text: |
+      okay see you later
+    metadata:
+      canonical: true
+  - text: |
+      okay thank you bye
+  - text: |
+      see ya
+  - text: |
+      see you
+  - text: |
+      see you soon
+  - text: |
+      see you tomorrow
+  - text: |
+      talk to you later
+  - text: |
+      thanks bye bye
+  - text: |
+      that's all goodbye
+  - text: |
+      that's it goodbye
+  - text: |
+      till next time
+  - text: |
+      you can go now
+- intent: chitchat.greet
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I greet you
+  - text: |
+      a good day
+  - text: |
+      a good morning
+  - text: |
+      afternoon
+  - text: |
+      and a good morning to you
+  - text: |
+      evening
+  - text: |
+      good evening
+    metadata:
+      canonical: true
+  - text: |
+      good evening there
+  - text: |
+      good evening to you
+  - text: |
+      good morning
+  - text: |
+      good morning there
+  - text: |
+      good morning to you
+  - text: |
+      good morning too
+  - text: |
+      greetings
+  - text: |
+      have a great morning
+  - text: |
+      have a nice morning
+  - text: |
+      hello
+  - text: |
+      hello again
+  - text: |
+      hello good evening
+  - text: |
+      hello good morning
+  - text: |
+      hello hi
+  - text: |
+      hello there
+  - text: |
+      hey
+  - text: |
+      hey good evening
+  - text: |
+      hey there
+  - text: |
+      heya
+  - text: |
+      hi
+  - text: |
+      hi good morning
+  - text: |
+      hi there
+  - text: |
+      howdy
+  - text: |
+      just going to say hi
+  - text: |
+      long time no see
+  - text: |
+      lovely day isn't it
+  - text: |
+      morning
+  - text: |
+      top of the morning to you
+- intent: chitchat.how_are_you
+  metadata:
+    language: en
+  examples:
+  - text: |
+      How is the weather
+  - text: |
+      How is weather
+  - text: |
+      I'm fine and you
+  - text: |
+      What is weather like
+  - text: |
+      are you alright
+  - text: |
+      are you having a good day
+  - text: |
+      are you okay
+  - text: |
+      hope you re having a pleasant eve
+  - text: |
+      hope your day is going well
+  - text: |
+      how about you
+  - text: |
+      how are the things going
+  - text: |
+      how are you
+  - text: |
+      how are you doing
+  - text: |
+      how are you doing this morning
+  - text: |
+      how are you feeling
+  - text: |
+      how are you getting on
+  - text: |
+      how are you going
+  - text: |
+      how are you today
+  - text: |
+      how do you do
+  - text: |
+      how do you feel
+  - text: |
+      how has your day been
+  - text: |
+      how has your day been going
+  - text: |
+      how have you been
+  - text: |
+      how is it
+  - text: |
+      how is it going
+  - text: |
+      how is your day
+  - text: |
+      how is your day being
+  - text: |
+      how is your day going
+  - text: |
+      how is your day going on
+  - text: |
+      how is your evening
+  - text: |
+      how is your life
+  - text: |
+      how is your morning going
+  - text: |
+      how is your morning so far
+    metadata:
+      canonical: true
+  - text: |
+      how was your day
+  - text: |
+      how your day is going
+  - text: |
+      how's life
+  - text: |
+      how's your day
+  - text: |
+      how's your day going
+  - text: |
+      is everything all right
+  - text: |
+      is everything okay
+  - text: |
+      what about your day
+  - text: |
+      what was your day like
+  - text: |
+      why is [sky]{"entity": "programs", "value": "own"} blue
+    metadata:
+      canonical: true
+- intent: diabetes
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I have [diabetes](reason)
+    metadata:
+      canonical: true
+  - text: |
+      I'm [diabetic]{"entity": "reason", "value": "diabetes"}
+  - text: |
+      What breathing technique is recommended for [diabetes](reason)
+  - text: |
+      What do you recommend for [diabetes](reason)
+- intent: different
+  metadata:
+    language: en
+  examples:
+  - text: |
+      How [SKY]{"entity": "programs", "role": "own"} compares to [mindfulness]{"entity": "programs", "role": "other"}
+  - text: |
+      How about [sleep](reason)?
+    metadata:
+      canonical: true
+  - text: |
+      How is [SKY]{"entity": "programs", "role": "own"} different from  [Headspace]{"entity": "programs", "role": "other"}
+  - text: |
+      How is [SKY]{"entity": "programs", "role": "own"} different from [Calm]{"entity": "programs", "role": "other"}
+  - text: |
+      How is [SKY]{"entity": "programs", "role": "own"} different from [MBSR]{"entity": "programs", "role": "other"}
+  - text: |
+      How is [SKY]{"entity": "programs", "role": "own"} different from [emotional intelligence]{"entity": "programs", "role": "other"}
+  - text: |
+      How is [SKY]{"entity": "programs", "role": "own"} different from [mindfulness]{"entity": "programs", "role": "other"}
+  - text: |
+      How is [SKY]{"entity": "programs", "role": "own"} different from [other meditations]{"entity": "programs", "role": "other"}
+  - text: |
+      How is [SKY]{"entity": "programs", "role": "own"} different from other [practices]{"entity": "programs", "role": "other"}
+  - text: |
+      How is it different from [Calm]{"entity": "programs", "role": "other"}
+  - text: |
+      How is it different from [Calm]{"entity": "programs", "role": "other"} app?
+  - text: |
+      How is it different from [Headpspace]{"entity": "programs", "role": "other"}
+  - text: |
+      How is it different from [Headspace]{"entity": "programs", "role": "other"}?
+  - text: |
+      How is it different from [MBSR]{"entity": "programs", "role": "other"}?
+  - text: |
+      How is it different from [emotional intelligence]{"entity": "programs", "role": "other"}?
+  - text: |
+      How is it different from [mindfulness]{"entity": "programs", "role": "other"}?
+    metadata:
+      canonical: true
+  - text: |
+      How is it different from [other meditations]{"entity": "programs", "role": "other"}?
+  - text: |
+      How is [sky]{"entity": "programs", "value": "own"} different
+  - text: |
+      How it compares to [Calm]{"entity": "programs", "role": "other"}
+  - text: |
+      How it compares to [Headspace]{"entity": "programs", "role": "other"}
+  - text: |
+      How it compares to [emotional intelligence]{"entity": "programs", "role": "other"}
+  - text: |
+      How it compares to [mindfulness]{"entity": "programs", "role": "other"}?
+  - text: |
+      How it compares to other [meditation techniques]{"entity": "programs", "role": "other"}?
+  - text: |
+      compare [sky](programs) with [mindfulness](programs)
+  - text: |
+      difference between [sky](programs) and [mindfulness](programs)
+    metadata:
+      canonical: true
+  - text: |
+      difference between [sky](programs) and [minfulness](programs)
+    metadata:
+      canonical: true
+  - text: |
+      how is different
+  - text: |
+      how is different from [emotional intelligence](programs)
+  - text: |
+      how is different from [mindfulness](programs)
+  - text: |
+      how is it different
+  - text: |
+      how is it different from [other meditations](programs)
+  - text: |
+      how is [kriya]{"entity": "programs", "value": "own"} different
+  - text: |
+      how is [kriya]{"entity": "programs", "value": "own"} different from [midfulness](programs)
+    metadata:
+      canonical: true
+  - text: |
+      how is [sky](programs) compared to [mindfulness](programs)
+  - text: |
+      how is [sky](programs) differebt
+  - text: |
+      how is [sky](programs) different
+    metadata:
+      canonical: true
+  - text: |
+      how is [sky](programs) different from [mindfulness](programs)
+  - text: |
+      how is [sky](programs) different from [minfulness](programs)
+  - text: |
+      how [sky](programs) compares to [emotional intelligence](programs)
+    metadata:
+      canonical: true
+  - text: |
+      what is the difference between [SKY](programs) and [mindfulness](programs)
+  - text: |
+      why is [sky]{"entity": "programs", "value": "own"} different
+    metadata:
+      canonical: true
+- intent: explain.kriya
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Is this a religion?
+  - text: |
+      Is this religious ?
+  - text: |
+      [SKY]{"entity": "programs", "value": "own"}
+  - text: |
+      What is [SKY]{"entity": "programs", "value": "own"}
+  - text: |
+      What is [SKY Breath Meditation]{"entity": "programs", "value": "own"}?
+  - text: |
+      What is [SKY Breath]{"entity": "programs", "value": "own"}?
+  - text: |
+      What is [SKY]{"entity": "programs", "value": "own"}?
+    metadata:
+      canonical: true
+  - text: |
+      What is [happiness program]{"entity": "programs", "value": "own"}?
+  - text: |
+      What is [kriya]{"entity": "programs", "value": "own"}?
+  - text: |
+      What is [sudharsan kriya]{"entity": "programs", "value": "own"}?
+  - text: |
+      is this hinduism?
+  - text: |
+      what is [kriya]{"entity": "programs", "value": "own"}
+  - text: |
+      what is [sky]{"entity": "programs", "value": "own"}
+- intent: finance.issue
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Can I have a [scholarship](finance)
+  - text: |
+      Can I have a [scholarship](finance)?
+  - text: |
+      Can I [pay](finance) later?
+  - text: |
+      Can I receive a [scholarship](finance)?
+  - text: |
+      Do you have [discounts](finance)
+  - text: |
+      Do you offer [discounts](finance)
+  - text: |
+      Do you offer [scholarships](finance)
+  - text: |
+      I can [pay](finance) later
+  - text: |
+      I cannot [afford](finance)
+    metadata:
+      canonical: true
+  - text: |
+      I cannot [afford](finance) it
+  - text: |
+      I cannot [afford](finance) the course
+  - text: |
+      I cannot [afforf](finance)
+  - text: |
+      I cannot [pay](finance)
+  - text: |
+      I cannot [pay](finance) the course
+  - text: |
+      I have [financial](finance) issues
+  - text: |
+      I want a [scholarship](finance)
+  - text: |
+      I want [scholarship](finance)
+  - text: |
+      It is beyond my [budget](finance)
+  - text: |
+      It is too [expensive](finance)
+  - text: |
+      It is too [much](finance)
+  - text: |
+      can i [pay](finance) later
+  - text: |
+      i cannot [afford](finance)
+  - text: |
+      i cannot [afford](finance) the course
+  - text: |
+      i cannot [pay](finance)
+  - text: |
+      is too [expensive](finance)
+  - text: |
+      it is too [expensive](finance)
+  - text: |
+      not [much](finance)
+- intent: gain
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want a [clear](gain) mind
+  - text: |
+      I want better [focus](gain)
+  - text: |
+      I want better [health](gain)
+    metadata:
+      canonical: true
+  - text: |
+      I want [better relationships](gain)
+    metadata:
+      canonical: true
+  - text: |
+      I want better [sleep](gain)
+    metadata:
+      canonical: true
+  - text: |
+      I want [calmness](gain)
+  - text: |
+      I want [happiness](gain)
+  - text: |
+      I want mind [clarity](gain)
+  - text: |
+      I want [peace](gain)
+  - text: |
+      I want to be [calm](gain)
+  - text: |
+      I want to be [free](gain)
+  - text: |
+      I want to be [happy](gain)
+  - text: |
+      I want to be more [productive](gain)
+  - text: |
+      I want to be [serene](gain)
+  - text: |
+      I want to feel better
+  - text: |
+      I want to [manage my anger](gain)
+    metadata:
+      canonical: true
+  - text: |
+      I want to [manage my emotions](gain)
+    metadata:
+      canonical: true
+  - text: |
+      I want to [relax](gain)
+  - text: |
+      I want too be a [free](gain) [man](gain)
+    metadata:
+      canonical: true
+  - text: |
+      be [calm](gain)
+  - text: |
+      [better sleep](gain)
+  - text: |
+      [contentment](gain)
+  - text: |
+      [fewer thoughts](gain)
+  - text: |
+      [free](gain)
+  - text: |
+      [happiness](gain)
+  - text: |
+      i want [peace](gain)
+  - text: |
+      [less thoughts](gain)
+  - text: |
+      [peace](gain) of mind
+  - text: |
+      [relaxation](gain)
+  - text: |
+      [serenity](gain)
+  - text: |
+      to be [free](gain)
+- intent: importance.breath
+  metadata:
+    language: en
+  examples:
+  - text: |
+      How should I improve my breath
+  - text: |
+      I already know how to breath
+  - text: |
+      I don't breath well
+  - text: |
+      I want to learn a breathing technique
+  - text: |
+      I want to learn breath work
+  - text: |
+      I want to learn to breath
+  - text: |
+      benefits of breath
+  - text: |
+      benefits of breathing
+  - text: |
+      benefits of breathing technique
+  - text: |
+      breath benefits
+  - text: |
+      what is the benefit of breathing
+  - text: |
+      what's the point in learning how to breath
+  - text: |
+      why do I need to learn to breath
+    metadata:
+      canonical: true
+  - text: |
+      why do i need to learn to breath
+- intent: installment
+  metadata:
+    language: en
+  examples: |
+    - Can I pay by [installment]{"entity": "installment", "value": "True"}
+    - Can I pay using [installments]{"entity": "installment", "value": "True"}
+    - Do you accept [installments]{"entity": "installment", "value": "True"}
+    - how about [installments]{"entity": "installment", "value": "True"}
+- intent: joke
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I want a good joke
+    metadata:
+      canonical: true
+  - text: |
+      say a joke
+- intent: later
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I cannot do it
+  - text: |
+      I'll do it later, when I can [afford](finance)
+    metadata:
+      canonical: true
+  - text: |
+      in the future
+  - text: |
+      later
+  - text: |
+      maybe later
+  - text: |
+      some other time
+- intent: meditation.feedback
+  metadata:
+    language: en
+  examples: |
+    - I enjoyed the meditation
+    - I loved the meditation
+    - great meditation
+- intent: mental.disease
+  metadata:
+    language: en
+  examples: |
+    - I am bipolar
+    - I have schizophrenia
+    - I have seizures
+    - I'm bipolar
+    - What do you recommend for seizures
+    - schizophrenia
+    - seizure
+- intent: no_say
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I don't want to say
+  - text: |
+      I don't want to share
+  - text: |
+      I prefer not to say
+  - text: |
+      I prefer not to share
+    metadata:
+      canonical: true
+  - text: |
+      no say
+- intent: pregnant
+  metadata:
+    language: en
+  examples: |
+    - I am [pregnant](reason)
+    - I'm [pregnant](reason)
+    - What do you recommend for [pregancy](reason)
+    - [pregnancy](reason)
+    - [pregnant](reason)
+- intent: problem.breath
+  metadata:
+    language: en
+  examples:
+  - text: |
+      I can hardly [breath](reason)
+  - text: |
+      I cannot breath properly
+    metadata:
+      canonical: true
+  - text: |
+      I have a problem [breathing](reason)
+  - text: |
+      I need help improving my [breathing](reason)
+- intent: reason
+  metadata:
+    language: en
+  examples:
+  - text: |
+      [Anxiety](reason)
+  - text: |
+      [Depression](reason)
+  - text: |
+      Does it help with my back?
+  - text: |
+      How should I improve my [breath](reason)?
+  - text: |
+      I am [depressed](reason)
+  - text: |
+      I am [sad](reason)
+  - text: |
+      I am [stressed](reason)
+  - text: |
+      I barely [breath](reason)
+  - text: |
+      I [broke up](reason) with my boyfriend
+  - text: |
+      I can't deal with [stress](reason)
+  - text: |
+      I can't [sleep](reason)
+  - text: |
+      I feel [anxiety](reason)
+  - text: |
+      I feel [anxious](reason)
+  - text: |
+      I feel [stress](reason)
+  - text: |
+      I feel [stressed](reason)
+    metadata:
+      canonical: true
+  - text: |
+      I have [anxiety](reason)
+  - text: |
+      I have back issues
+  - text: |
+      I have other [reason](reason)
+  - text: |
+      I have [relationship](reason) problems
+  - text: |
+      I observed that I don't [breathe](reason)
+  - text: |
+      I'm [sad](reason)
+  - text: |
+      [Mind](reason) clarity
+  - text: |
+      My breath is [shallow](reason)
+  - text: |
+      My wife always gives me [work](reason)
+  - text: |
+      [Sleep](reason) problems
+  - text: |
+      can it help with my back
+  - text: |
+      [clarity](reason)
+  - text: |
+      how should I improve my [breath](reason)
+  - text: |
+      how should I improve my [breathing](reason)
+  - text: |
+      how should improve my [breath](reason)
+  - text: |
+      [other](reason)
+  - text: |
+      [relationship](reason) issues
+  - text: |
+      [relationship](reason) problem
+  - text: |
+      [sad](reason)
+  - text: |
+      [stress](reason)
+- intent: relationship
+  metadata:
+    language: en
+  examples:
+  - text: |
+      How can I improve [my relationships](gain)
+    metadata:
+      canonical: true
+  - text: |
+      I have an abusive partner
+    metadata:
+      canonical: true
+  - text: |
+      I just [broke up](reason)
+    metadata:
+      canonical: true
+  - text: |
+      What do you recommend for [relationship](reason) problems
+    metadata:
+      canonical: true
+- intent: research
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Are there papers on [SKY](programs)
+  - text: |
+      Are there scientific peer reviewed papers in [SKY](programs)
+  - text: |
+      Can you list more research?
+    metadata:
+      canonical: true
+  - text: |
+      Can you show research
+  - text: |
+      Is there more research
+  - text: |
+      Is there more research?
+  - text: |
+      Show more info on [SKY](programs)
+    metadata:
+      canonical: true
+  - text: |
+      Show research papers
+  - text: |
+      is there more research
+  - text: |
+      is there more research on [sky]{"entity": "programs", "role": "own"}
+    metadata:
+      canonical: true
+  - text: |
+      research
+  - text: |
+      research on SKY
+- intent: signup
+  metadata:
+    language: en
+  examples: |
+    - I want to register
+    - I want to sign up
+    - how can I register
+    - how can I sign up?
+    - is there a way to sign up
+    - register
+    - register me
+    - sign me up
+    - what I need to do to register
+    - what I need to do to sign up
+    - what are the steps to register
+    - what are the steps to sign up
+- intent: sky.less.time
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Can I only do two days?
+  - text: |
+      Can it be done in [less](gain) time?
+    metadata:
+      canonical: true
+  - text: |
+      Cant it be less
+    metadata:
+      canonical: true
+  - text: |
+      Do you have one day courses
+  - text: |
+      Do you have shorter courses
+  - text: |
+      Do you have shorter ones
+  - text: |
+      Do you have two days long
+  - text: |
+      It is too long
+  - text: |
+      Why does it take 3 days
+  - text: |
+      Why does it take so long
+  - text: |
+      Why does it take so much [time](programs)
+    metadata:
+      canonical: true
+  - text: |
+      Why it takes so [much](finance) time
+    metadata:
+      canonical: true
+- intent: try.meditation
+  metadata:
+    language: en
+  examples: |
+    - Can I try a meditation
+    - I want to try meditation
+- intent: why
+  metadata:
+    language: en
+  examples: |
+    - Why are you asking me this?
+    - Why are you asking that?
+    - Why do you need that?
+    - Why should I answer?
+    - why
+    - why should I answer
+- synonym: Sahaj Samadhi Meditation
+  examples: |
+    - Art of Meditation
+    - Sahaj
+    - Sahaj Samadhi
+    - Meditation workshop
+    - meditation course
+    - meditation program
+- synonym: SKY
+  examples: |
+    - Art of Living Course
+    - Art of Living Part 1
+    - Art of Living Program
+    - Art of Living Workshop
+    - Happiness Program
+    - Kriya
+    - Part 1
+    - SKY Breath
+    - SKY Breath Meditation
+    - SKY Meditation
+    - SKY Program
+    - SKY course
+    - SKY workshop
+    - Sudarshan Kriya
+- synonym: Silent Retreat
+  examples: |
+    - Silence Program
+    - Silence Retreat
+    - Silent course
+    - Silent workshop
+    - Silence course
+    - Silence workshop
+    - retreat
+    - Art of Living Part 2
+    - Part 2
+    - Silent Program
+    - Art of Silence

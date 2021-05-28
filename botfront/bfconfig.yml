@@ -1,0 +1,14 @@
+name: Wasssupp
+namespace: bf-wasssupp
+defaultLanguage: en
+nluThreshold: 0.75
+timezoneOffset: 0
+allowContextualQuestions: true
+logoUrl: >-
+  https://www.artofliving.org/sites/www.artofliving.org/files/images/logo/AOL_logo_no_line.png
+smallLogoUrl: >-
+  https://www.artofliving.org/sites/www.artofliving.org/files/images/logo/AOL_logo_no_line.png
+instance:
+  name: Default Instance
+  host: 'http://rasa:5005'
+  projectId: qpi2RPStGpw9NdhmA

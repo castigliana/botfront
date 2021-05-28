@@ -1,0 +1,46 @@
+stories:
+  - story: Mental Issues
+    steps:
+      - intent: mental.disease
+        user: I'm bipolar
+        entities: []
+      - action: utter_dlTQI2eOY
+      - action: utter_Q2n0XuA0o
+    metadata:
+      group: Exceptions
+  - story: Pregnancy
+    steps:
+      - intent: pregnant
+        user: I'm pregnant
+        entities: []
+      - action: utter_YOnk4IJFa
+    metadata:
+      group: Exceptions
+  - story: Sad story
+    steps:
+      - intent: wassup.sad
+        user: I'm sad
+        entities: []
+      - action: utter_0HMv3E0lp
+      - checkpoint: Sad_story__branches
+    metadata:
+      group: Exceptions
+  - story: Sad story__joke
+    steps:
+      - checkpoint: Sad_story__branches
+      - intent: joke
+        user: I want a good joke
+        entities: []
+      - action: utter_s6ck4g2hG
+    metadata:
+      group: Exceptions
+  - story: Sad story__music
+    steps:
+      - checkpoint: Sad_story__branches
+      - intent: music
+        user: play some music
+        entities: []
+      - action: utter_6oL6NLH6q
+    metadata:
+      group: Exceptions
+rules: []

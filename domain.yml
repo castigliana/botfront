@@ -1,0 +1,2073 @@
+actions:
+  - action_botfront_disambiguation
+  - action_botfront_disambiguation_followup
+  - action_botfront_fallback
+  - action_botfront_mapping
+  - action_scholarship
+  - action_set_insight
+  - utter_-DujDtaQr
+  - utter_0HMv3E0lp
+  - utter_1e581hboi
+  - utter_1tCvKIpqZ
+  - utter_2Vz7Ym2Ml
+  - utter_3mSjuBBXg
+  - utter_5ZMUVKDBz
+  - utter_6oL6NLH6q
+  - utter_7q2ZSc0wM
+  - utter_AAd8mBacO
+  - utter_BL4P9ZzNB
+  - utter_CzpzxTqaN
+  - utter_DF__aWt5M
+  - utter_NSfT8viOG
+  - utter_PXBM_nC9F
+  - utter_Q2n0XuA0o
+  - utter_TEZ7u-FQ3
+  - utter_UqjeP9kb4
+  - utter_YOnk4IJFa
+  - utter_YuNNhNbsU
+  - utter__Pboxoyeb
+  - utter__eXjuFBsM
+  - utter_ask_afford_amount
+  - utter_ask_amount-of-money
+  - utter_ask_appointment
+  - utter_ask_breath_anxious
+  - utter_ask_breath_experience
+  - utter_ask_breath_feedback
+  - utter_ask_breath_pattern
+  - utter_ask_breath_pattern_angry
+  - utter_ask_capture_lead
+  - utter_ask_connect_live
+  - utter_ask_edwedfewdf
+  - utter_ask_email
+  - utter_ask_experience_breath
+  - utter_ask_financial_situation
+  - utter_ask_first_name
+  - utter_ask_gain
+  - utter_ask_gain_slot
+  - utter_ask_impact
+  - utter_ask_insight
+  - utter_ask_installment
+  - utter_ask_interest
+  - utter_ask_interested_testimonial
+  - utter_ask_meditation_experience
+  - utter_ask_meditation_feedback
+  - utter_ask_number_installments
+  - utter_ask_other_reason
+  - utter_ask_perform_testimonial
+  - utter_ask_phone
+  - utter_ask_present_course
+  - utter_ask_reason
+  - utter_ask_reason_slot
+  - utter_ask_sasddwedwedw
+  - utter_ask_save_lead
+  - utter_ask_see_courses
+  - utter_ask_stress_cause
+  - utter_ask_timezone
+  - utter_ask_want_breath_experience
+  - utter_ask_want_meditation_experience
+  - utter_ask_want_talk
+  - utter_dJXwSHqWf
+  - utter_dcotSZ6n_
+  - utter_default
+  - utter_disambiguation
+  - utter_dlTQI2eOY
+  - utter_ehk_YFoIf
+  - utter_fggBuBuQT
+  - utter_heGtgVTTfm
+  - utter_hi
+  - utter_i1Qif8PaB
+  - utter_invalid_email
+  - utter_invalid_first_name
+  - utter_invalid_number_installments
+  - utter_kAks2vC68
+  - utter_lU5OY_t7h
+  - utter_lpWrsCJ7h
+  - utter_mrSkN0Rfd
+  - utter_s6ck4g2hG
+  - utter_tNVAXLyjC
+  - utter_valid_email
+  - utter_valid_timezone
+  - utter_yg3mdJIDX
+  - utter_zV8o1XCz3
+entities:
+  - finance
+  - programs
+forms:
+  intro_form:
+    collect_in_botfront: true
+    description: Intro
+    graph_elements:
+      edges:
+        - condition:
+            children1:
+              bb99a889-89ab-4cde-b012-317920d1463d:
+                properties:
+                  field: interest
+                  operator: is_exactly
+                  value:
+                    - signup
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 988b9ba8-0123-4456-b89a-b1792048803c
+            properties:
+              conjunction: AND
+              not: false
+            type: group
+          id: einterest-timezone
+          source: interest
+          target: timezone
+          type: condition
+        - condition:
+            children1:
+              89a8aaa8-cdef-4012-b456-717920df7669:
+                properties:
+                  field: interest
+                  operator: is_exactly
+                  value:
+                    - later
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 988b9ba8-0123-4456-b89a-b1792048803c
+            properties:
+              conjunction: AND
+              not: false
+            type: group
+          id: einterest-want_talk
+          source: interest
+          target: want_talk
+          type: condition
+        - condition: null
+          id: einterest-save_lead
+          source: interest
+          target: save_lead
+          type: condition
+        - condition:
+            children1:
+              b89bb9ab-cdef-4012-b456-717920f12589:
+                properties:
+                  field: save_lead
+                  operator: is_exactly
+                  value:
+                    - 'true'
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 988b9ba8-0123-4456-b89a-b1792048803c
+            properties:
+              conjunction: AND
+              not: false
+            type: group
+          id: esave_lead-first_name
+          source: save_lead
+          target: first_name
+          type: condition
+        - condition: null
+          id: efirst_name-email
+          source: first_name
+          target: email
+          type: condition
+        - condition: null
+          id: eimpact-interest
+          source: impact
+          target: interest
+          type: condition
+        - condition:
+            children1:
+              bb8aa999-0123-4456-b89a-b1792df3a06f:
+                properties:
+                  field: want_breath_experience
+                  operator: is_exactly
+                  value:
+                    - 'true'
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 88aa88bb-0123-4456-b89a-b1792b37a28a
+            properties:
+              conjunction: AND
+            type: group
+          id: ewant_breath_experience-breath_experience
+          source: want_breath_experience
+          target: breath_experience
+          type: condition
+        - condition: null
+          id: ewant_breath_experience-want_meditation_experience
+          source: want_breath_experience
+          target: want_meditation_experience
+          type: condition
+        - condition:
+            children1:
+              9aabba88-cdef-4012-b456-71792dfd4a52:
+                properties:
+                  field: want_meditation_experience
+                  operator: is_exactly
+                  value:
+                    - 'true'
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 88aa88bb-0123-4456-b89a-b1792b37a28a
+            properties:
+              conjunction: AND
+            type: group
+          id: ewant_meditation_experience-meditation_experience
+          source: want_meditation_experience
+          target: meditation_experience
+          type: condition
+        - condition: null
+          id: ewant_meditation_experience-interested_testimonial
+          source: want_meditation_experience
+          target: interested_testimonial
+          type: condition
+        - condition: null
+          id: e1-reason
+          source: '1'
+          target: reason
+          type: condition
+        - condition:
+            children1:
+              898bb8aa-89ab-4cde-b012-317939f6ac69:
+                properties:
+                  field: reason
+                  operator: is_exactly
+                  value:
+                    - stress
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: baa8b9a8-0123-4456-b89a-b17939b9b4c4
+            properties:
+              conjunction: AND
+            type: group
+          id: ereason-stress_cause
+          source: reason
+          target: stress_cause
+          type: condition
+        - condition: null
+          id: estress_cause-gain
+          source: stress_cause
+          target: gain
+          type: condition
+        - condition: null
+          id: ereason-gain
+          source: reason
+          target: gain
+          type: condition
+        - condition: null
+          id: ebreath_anxious-want_breath_experience
+          source: breath_anxious
+          target: want_breath_experience
+          type: condition
+        - condition: null
+          id: egain-breath_pattern
+          source: gain
+          target: breath_pattern
+          type: condition
+        - condition: null
+          id: ebreath_pattern-breath_anxious
+          source: breath_pattern
+          target: breath_anxious
+          type: condition
+        - condition: null
+          id: emeditation_experience-meditation_feedback
+          source: meditation_experience
+          target: meditation_feedback
+          type: condition
+        - condition: null
+          id: emeditation_feedback-interested_testimonial
+          source: meditation_feedback
+          target: interested_testimonial
+          type: condition
+        - condition: null
+          id: ebreath_experience-breath_feedback
+          source: breath_experience
+          target: breath_feedback
+          type: condition
+        - condition: null
+          id: ebreath_feedback-want_meditation_experience
+          source: breath_feedback
+          target: want_meditation_experience
+          type: condition
+        - condition:
+            children1:
+              babab8bb-89ab-4cde-b012-3179760b0c08:
+                properties:
+                  field: interested_testimonial
+                  operator: is_exactly
+                  value:
+                    - 'true'
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 888ba8b8-0123-4456-b89a-b1796e6b895a
+            properties:
+              conjunction: AND
+            type: group
+          id: einterested_testimonial-perform_testimonial
+          source: interested_testimonial
+          target: perform_testimonial
+          type: condition
+        - condition: null
+          id: eperform_testimonial-impact
+          source: perform_testimonial
+          target: impact
+          type: condition
+        - condition: null
+          id: einterested_testimonial-impact
+          source: interested_testimonial
+          target: impact
+          type: condition
+        - condition: null
+          id: esave_lead-33c0b6f4-2d45-48d2-80d5-0ca575bdab2f
+          source: save_lead
+          target: 33c0b6f4-2d45-48d2-80d5-0ca575bdab2f
+          type: condition
+        - condition:
+            children1:
+              889aba9a-89ab-4cde-b012-3179ac336fd5:
+                properties:
+                  field: want_talk
+                  operator: is_exactly
+                  value:
+                    - 'false'
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 8b988a8a-0123-4456-b89a-b179aaf4a2c1
+            properties:
+              conjunction: AND
+            type: group
+          id: ewant_talk-save_lead
+          source: want_talk
+          target: save_lead
+          type: condition
+      nodes:
+        - id: '1'
+          position:
+            x: 160
+            'y': 20
+          type: start
+        - id: interest
+          position:
+            x: 60
+            'y': 2640
+          slotName: interest
+          type: slot
+        - id: timezone
+          position:
+            x: -540
+            'y': 2840
+          slotName: timezone
+          type: slot
+        - id: want_talk
+          position:
+            x: -160
+            'y': 2840
+          slotName: want_talk
+          type: slot
+        - id: save_lead
+          position:
+            x: 340
+            'y': 2820
+          slotName: save_lead
+          type: slot
+        - id: first_name
+          position:
+            x: 220
+            'y': 3000
+          slotName: first_name
+          type: slot
+        - id: email
+          position:
+            x: 220
+            'y': 3120
+          slotName: email
+          type: slot
+        - id: interested_testimonial
+          position:
+            x: 80
+            'y': 2060
+          slotName: interested_testimonial
+          type: slot
+        - id: impact
+          position:
+            x: 100
+            'y': 2260
+          slotName: impact
+          type: slot
+        - id: stress_cause
+          position:
+            x: -200
+            'y': 360
+          slotName: stress_cause
+          type: slot
+        - id: want_breath_experience
+          position:
+            x: 80
+            'y': 1160
+          slotName: want_breath_experience
+          type: slot
+        - id: breath_experience
+          position:
+            x: -320
+            'y': 1260
+          slotName: breath_experience
+          type: slot
+        - id: want_meditation_experience
+          position:
+            x: 80
+            'y': 1640
+          slotName: want_meditation_experience
+          type: slot
+        - id: meditation_experience
+          position:
+            x: -220
+            'y': 1800
+          slotName: meditation_experience
+          type: slot
+        - id: reason
+          position:
+            x: 80
+            'y': 180
+          slotName: reason
+          type: slot
+        - id: gain
+          position:
+            x: 60
+            'y': 360
+          slotName: gain
+          type: slot
+        - id: breath_anxious
+          position:
+            x: 80
+            'y': 960
+          slotName: breath_anxious
+          type: slot
+        - id: breath_pattern
+          position:
+            x: 60
+            'y': 600
+          slotName: breath_pattern
+          type: slot
+        - id: meditation_feedback
+          position:
+            x: -220
+            'y': 1960
+          slotName: meditation_feedback
+          type: slot
+        - id: breath_feedback
+          position:
+            x: -320
+            'y': 1460
+          slotName: breath_feedback
+          type: slot
+        - id: perform_testimonial
+          position:
+            x: -220
+            'y': 2180
+          slotName: perform_testimonial
+          type: slot
+        - id: 33c0b6f4-2d45-48d2-80d5-0ca575bdab2f
+          position:
+            x: 520
+            'y': 3000
+          slotName: handle_different
+          slotValue: true
+          type: slotSet
+    groupName: Wassup group
+    name: intro_form
+    slots:
+      - filling:
+          - intent:
+              - signup
+            not_intent: []
+            type: from_intent
+            value: signup
+          - intent:
+              - later
+            not_intent: null
+            type: from_intent
+            value: later
+          - intent:
+              - not.interested
+            not_intent: []
+            type: from_intent
+            value: cold
+        name: interest
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: null
+            not_intent:
+              - basics.request_handover
+            type: from_text
+        name: timezone
+        utter_on_new_valid_slot: true
+      - filling:
+          - entity:
+              - want_talk
+            group: null
+            intent:
+              - basics.no
+              - basics.yes
+            not_intent: []
+            role: null
+            type: from_entity
+          - intent:
+              - basics.yes
+            not_intent: []
+            type: from_intent
+            value: true
+          - intent:
+              - basics.no
+            not_intent: []
+            type: from_intent
+            value: false
+        name: want_talk
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - save_lead
+            group: null
+            intent:
+              - basics.yes
+              - basics.no
+            not_intent: []
+            role: null
+            type: from_entity
+          - intent:
+              - basics.yes
+            not_intent: []
+            type: from_intent
+            value: true
+          - intent:
+              - basics.no
+            not_intent: []
+            type: from_intent
+            value: false
+        name: save_lead
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - first_name
+            group: null
+            intent: null
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent: null
+            not_intent: null
+            type: from_text
+        name: first_name
+        utter_on_new_valid_slot: false
+        validation:
+          comparatum: 1
+          operator: longer
+      - filling:
+          - entity:
+              - email
+            group: null
+            intent:
+              - inform
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent: null
+            not_intent:
+              - basics.request_handover
+              - basics.stop_or_cancel
+            type: from_text
+        name: email
+        utter_on_new_valid_slot: true
+      - filling:
+          - entity:
+              - interested_testimonial
+            group: null
+            intent:
+              - basics.yes
+              - basics.no
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent:
+              - basics.yes
+            not_intent: []
+            type: from_intent
+            value: true
+          - intent:
+              - basics.no
+            not_intent: null
+            type: from_intent
+            value: false
+        name: interested_testimonial
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: null
+            not_intent:
+              - basics.stop_or_cancel
+              - basics.request_handover
+              - benefits.sky
+              - why
+              - importance.breath
+              - finance.issue
+              - not.interested
+              - different
+            type: from_text
+        name: impact
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - stress_cause
+            group: null
+            intent:
+              - inform
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent: null
+            not_intent:
+              - basics.request_handover
+              - basics.stop_or_cancel
+              - why
+              - no_say
+              - chitchat.bye
+              - importance.breath
+              - explain.kriya
+              - benefits.sky
+              - different
+            type: from_text
+        name: stress_cause
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - want_breath_experience
+            group: null
+            intent:
+              - basics.yes
+              - basics.no
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent:
+              - basics.yes
+            not_intent: []
+            type: from_intent
+            value: true
+          - intent:
+              - basics.no
+            not_intent: []
+            type: from_intent
+            value: false
+        name: want_breath_experience
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: null
+            not_intent:
+              - benefits.sky
+              - chitchat.bye
+              - explain.kriya
+              - no_say
+              - importance.breath
+              - why
+              - different
+              - basics.request_handover
+            type: from_text
+        name: breath_experience
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - want_meditation_experience
+            group: null
+            intent:
+              - basics.yes
+              - basics.no
+            not_intent: []
+            role: null
+            type: from_entity
+          - intent:
+              - basics.yes
+            not_intent: []
+            type: from_intent
+            value: true
+          - intent:
+              - basics.no
+            not_intent: []
+            type: from_intent
+            value: false
+        name: want_meditation_experience
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: null
+            not_intent:
+              - benefits.sky
+              - chitchat.bye
+              - explain.kriya
+              - no_say
+              - importance.breath
+              - basics.request_handover
+              - basics.stop_or_cancel
+              - why
+              - different
+            type: from_text
+        name: meditation_experience
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - reason
+            group: null
+            intent:
+              - reason
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent: null
+            not_intent:
+              - basics.request_handover
+              - basics.stop_or_cancel
+              - chitchat.bye
+              - benefits.sky
+              - explain.kriya
+              - importance.breath
+              - different
+              - not.interested
+            type: from_text
+        name: reason
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - gain
+            group: null
+            intent:
+              - gain
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent: null
+            not_intent:
+              - basics.request_handover
+              - basics.stop_or_cancel
+              - why
+              - no_say
+              - chitchat.bye
+              - benefits.sky
+              - explain.kriya
+              - importance.breath
+              - different
+            type: from_text
+        name: gain
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: null
+            not_intent:
+              - basics.request_handover
+              - basics.stop_or_cancel
+              - chitchat.bye
+              - explain.kriya
+              - no_say
+              - importance.breath
+              - why
+              - importance.breath
+            type: from_text
+        name: breath_anxious
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: null
+            not_intent:
+              - basics.stop_or_cancel
+              - basics.request_handover
+              - chitchat.bye
+              - explain.kriya
+              - no_say
+              - importance.breath
+              - why
+              - importance.breath
+            type: from_text
+        name: breath_pattern
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: null
+            not_intent:
+              - basics.request_handover
+              - basics.stop_or_cancel
+              - chitchat.bye
+              - explain.kriya
+              - importance.breath
+              - why
+              - explain.kriya
+              - different
+            type: from_text
+        name: meditation_feedback
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: null
+            not_intent:
+              - basics.request_handover
+              - basics.stop_or_cancel
+              - chitchat.bye
+              - explain.kriya
+              - importance.breath
+              - why
+              - importance.breath
+            type: from_text
+        name: breath_feedback
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: null
+            not_intent:
+              - basics.request_handover
+              - basics.stop_or_cancel
+              - chitchat.bye
+              - explain.kriya
+              - importance.breath
+              - why
+              - different
+            type: from_text
+        name: perform_testimonial
+        utter_on_new_valid_slot: false
+    updatedAt: 1622123169398
+  scholarship_form:
+    collect_in_botfront: null
+    description: null
+    graph_elements:
+      edges:
+        - condition: null
+          id: e1-financial_situation
+          source: '1'
+          target: financial_situation
+          type: condition
+        - condition:
+            children1:
+              b9aa89a9-89ab-4cde-b012-317991249b49:
+                properties:
+                  field: installment
+                  operator: is_exactly
+                  value:
+                    - 'true'
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 888899b9-0123-4456-b89a-b179905ed3c3
+            properties:
+              conjunction: AND
+            type: group
+          id: einstallment-number_installments
+          source: installment
+          target: number_installments
+          type: condition
+        - condition: null
+          id: enumber_installments-email
+          source: number_installments
+          target: email
+          type: condition
+        - condition: null
+          id: einstallment-email
+          source: installment
+          target: email
+          type: condition
+        - condition: null
+          id: efinancial_situation-amount-of-money
+          source: financial_situation
+          target: amount-of-money
+          type: condition
+        - condition: null
+          id: eamount-of-money-installment
+          source: amount-of-money
+          target: installment
+          type: condition
+      nodes:
+        - id: '1'
+          position:
+            x: 200
+            'y': 200
+          type: start
+        - id: financial_situation
+          position:
+            x: 120
+            'y': 360
+          slotName: financial_situation
+          type: slot
+        - id: installment
+          position:
+            x: 120
+            'y': 660
+          slotName: installment
+          type: slot
+        - id: number_installments
+          position:
+            x: -80
+            'y': 900
+          slotName: number_installments
+          type: slot
+        - id: email
+          position:
+            x: 120
+            'y': 1060
+          slotName: email
+          type: slot
+        - id: amount-of-money
+          position:
+            x: 120
+            'y': 500
+          slotName: amount-of-money
+          type: slot
+    groupName: Wassup group
+    name: scholarship_form
+    slots:
+      - filling:
+          - intent: []
+            not_intent: []
+            type: from_text
+        name: financial_situation
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - installment
+            group: null
+            intent:
+              - basics.yes
+              - basics.no
+            not_intent: []
+            role: null
+            type: from_entity
+          - intent:
+              - basics.yes
+            not_intent: []
+            type: from_intent
+            value: true
+          - intent:
+              - basics.no
+            not_intent: []
+            type: from_intent
+            value: false
+        name: installment
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - number_installments
+            group: null
+            intent:
+              - inform
+            not_intent: []
+            role: null
+            type: from_entity
+          - intent: null
+            not_intent:
+              - chitchat.bye
+              - basics.request_handover
+            type: from_text
+        name: number_installments
+        utter_on_new_valid_slot: false
+        validation:
+          comparatum:
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+          operator: is_in
+      - filling:
+          - entity:
+              - email
+            group: null
+            intent: null
+            not_intent: null
+            role: null
+            type: from_entity
+        name: email
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - amount-of-money
+            group: null
+            intent: null
+            not_intent: null
+            role: null
+            type: from_entity
+          - entity:
+              - number
+            group: null
+            intent: []
+            not_intent: []
+            role: null
+            type: from_entity
+        name: amount-of-money
+        utter_on_new_valid_slot: false
+    updatedAt: 1621914696021
+intents:
+  - basics.request_handover
+  - basics.stop_or_cancel
+  - benefits.meditation
+  - benefits.sky
+  - chitchat.bye
+  - chitchat.greet
+  - diabetes
+  - different
+  - explain.kriya
+  - finance.issue
+  - get_started
+  - importance.breath
+  - joke
+  - mental.disease
+  - music
+  - pregnant
+  - signup
+  - wassup.sad
+  - why
+responses:
+  utter_-DujDtaQr:
+    - image: >-
+        https://skyschools.org/wp-content/uploads/2020/06/green-research-depression-stress.png
+      language: en
+  utter_0HMv3E0lp:
+    - language: en
+      metadata: null
+      quick_replies:
+        - payload: '/joke{"":""}'
+          title: Tell me a joke
+          type: postback
+        - payload: /music
+          title: Listen to some music
+          type: postback
+      text: I can cheer you up. Choose what you want to do next
+  utter_1e581hboi:
+    - language: en
+      metadata: null
+      text: >-
+        Research from Harvard, Yale & Stanford shows that SKY Meditation is the
+        only program to show significant improvement across 6 measures of
+        well-being
+  utter_1tCvKIpqZ:
+    - language: ro
+      text: La revedere
+    - language: en
+      metadata: null
+      text: Bye
+  utter_2Vz7Ym2Ml:
+    - language: en
+      text: >-
+        Participants who practiced SKY Breath Meditation experienced the
+        greatest **mental health**, **social connectedness**, **positive
+        emotions**, **reduced stress levels, depression**, and **mindfulness
+        benefits**.
+  utter_3mSjuBBXg:
+    - language: en
+      text: I'm outside form 2
+  utter_5ZMUVKDBz:
+    - language: en
+      metadata: null
+      text: Welcome!
+    - language: ro
+      metadata: null
+      text: Bine ati venit!
+  utter_6oL6NLH6q:
+    - language: en
+      text: don't know how to play
+  utter_7q2ZSc0wM:
+    - language: en
+      metadata: null
+      text: >-
+        It is a LIVE ONLINE 3-day course with a **certified instructor** to drop
+        stress and anxiety in only 3 days!
+
+
+        You’ll gain a **life-transforming breathwork** technique backed by over
+        **100+ independent studies** you can practice anytime you need.
+
+
+        Using the science of breath, you can **raise your energy**, **manage
+        your emotions**, and **find lasting ease**...so you’re ready to face
+        your day. Every day.
+  utter_AAd8mBacO:
+    - language: en
+      metadata: null
+      text: >-
+        I can help you with that. 
+
+
+        If you are interested in a scholarship, please provide some additional
+        information.
+  utter_BL4P9ZzNB:
+    - language: en
+      text: |-
+        Thank you.
+
+        Great News! We will be able to offer a scholarship
+  utter_CzpzxTqaN:
+    - language: en
+      text: >-
+        Meditation offers innumerable benefits for your body, mind and spirit.
+        The rest you gain in meditation is deeper than the deepest sleep. The
+        deeper your rest, the more dynamic your activity is.
+  utter_DF__aWt5M:
+    - language: en
+      metadata: null
+      text: >-
+        Research from Harvard, Yale & Stanford shows that SKY Meditation is the
+        only program to show significant improvement across 6 measures of
+        well-being: !!!
+
+
+        **Stress, Depression, Mental Health, Social Connectedness, Positive
+        Emotion and Mindfulness**.
+
+
+        The **Mindfulness** (MBSR) group did not show any significant changes.
+  utter_NSfT8viOG:
+    - language: en
+      quick_replies:
+        - title: PST
+          type: web_url
+          url: >-
+            https://members.us.artofliving.org/?timeZoneFilter=%7B%22name%22%3A%22Pacific%22%2C%22value%22%3A%22PST%22%7D&courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D
+        - title: EST
+          type: web_url
+          url: >-
+            https://members.us.artofliving.org/?courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D&timeZoneFilter=%7B%22name%22%3A%22Eastern%22%2C%22value%22%3A%22EST%22%7D
+        - title: CST
+          type: web_url
+          url: >-
+            https://members.us.artofliving.org/?courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D&timeZoneFilter=%7B%22name%22%3A%22Central%22%2C%22value%22%3A%22CST%22%7D
+        - title: MT
+          type: web_url
+          url: >-
+            https://members.us.artofliving.org/?courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D&timeZoneFilter=%7B%22name%22%3A%22Mountain%22%2C%22value%22%3A%22MST%22%7D
+        - title: Hawaii
+          type: web_url
+          url: >-
+            https://members.us.artofliving.org/?courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D&timeZoneFilter=%7B%22name%22%3A%22Hawaii%22%2C%22value%22%3A%22HST%22%7D
+      text: What time zone are you in?
+  utter_PXBM_nC9F:
+    - language: en
+      metadata: null
+      text: >-
+        There is a connection between the breath and emotions
+
+
+        Have you noticed how you breath when you are angry or sad?
+
+
+        There is a two way street. Through breath you can influence how you
+        feel, your mind
+
+
+        We use only 30% of lung capacity
+
+
+        90% of nutrition comes from breath
+
+
+        90% of toxins are eliminated through breath
+  utter_Q2n0XuA0o:
+    - language: en
+      text: >-
+        Learn more information about Sahaj Samadhi Meditation
+        [here](https://www.artofliving.org/us-en/sahaj-samadhi-meditation)
+  utter_TEZ7u-FQ3:
+    - language: en
+      text: Anything else I can help you with?
+  utter_UqjeP9kb4:
+    - image: >-
+        https://d9hhrg4mnvzow.cloudfront.net/event.us.artofliving.org/us-en/research/aa6828f1-infographics-1-yale-1_10id0xz0gz0b900t0fo000.png
+      language: en
+  utter_YOnk4IJFa:
+    - language: en
+      metadata: null
+      text: >-
+        Sahaj Samadhi Meditation is best for your condition
+
+
+        Learn more information about Sahaj Samadhi Meditation
+        [here](https://www.artofliving.org/us-en/sahaj-samadhi-meditation)
+  utter_YuNNhNbsU:
+    - language: en
+      metadata: null
+      text: Anything I can help you with?
+  utter__Pboxoyeb:
+    - custom:
+        attachment:
+          payload:
+            src: >-
+              https://player.vimeo.com/video/554151251?title=0&byline=0&portrait=0&speed=0&badge=0&autopause=0&autoplay=1&controls=1&player_id=0&app_id=58479/embed
+            title: Double click on video for full screen
+          type: video
+        text: Are you enjoying the meditation?
+      language: en
+      metadata: null
+  utter__eXjuFBsM:
+    - language: en
+      metadata: null
+      text: You can call 800.000.0000 to connect to an instructor
+  utter_ask_afford_amount:
+    - language: en
+      metadata: null
+      text: How much you can afford?
+  utter_ask_amount-of-money:
+    - language: en
+      metadata: null
+      text: How much can you afford?
+  utter_ask_appointment:
+    - language: en
+      quick_replies:
+        - payload: /affirm
+          title: 'yes'
+          type: postback
+      text: Would you like to talk to an instructor ?
+  utter_ask_breath_anxious:
+    - language: en
+      metadata: null
+      quick_replies:
+        - payload: /inform
+          title: Quick
+          type: postback
+        - payload: /inform
+          title: Shallow
+          type: postback
+      text: How do you breath when fearful
+  utter_ask_breath_experience:
+    - custom:
+        attachment:
+          payload:
+            src: >-
+              https://player.vimeo.com/video/484245991?title=0&byline=0&portrait=0&speed=0&badge=0&autopause=0&autoplay=1&controls=1&player_id=0&app_id=58479/embed
+            title: Double click on video for full screen
+          type: video
+        text: Are you enjoying the breath technique?
+      language: en
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageEventCallbacks:
+          pageEvents:
+            - event: click
+              payload: /inform
+              selector: 'div#render-target textarea'
+        userInput: show
+  utter_ask_breath_feedback:
+    - buttons:
+        - payload: /inform
+          title: Good
+          type: postback
+        - payload: /inform
+          title: Energized
+          type: postback
+        - payload: /inform
+          title: I felt some tingling inside
+          type: postback
+      language: en
+      metadata: null
+      text: How was your experience?
+  utter_ask_breath_pattern:
+    - language: en
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks:
+          pageEvents:
+            - event: mouseover
+              payload: /importance.breath
+              selector: 'div#render-target span.logo.pale-grey > img'
+        userInput: show
+      quick_replies:
+        - payload: /inform
+          title: Fast
+          type: postback
+        - payload: /inform
+          title: Slow
+          type: postback
+      text: |-
+        There is a connection between the breath and emotions.  
+        How do you breath when angry?
+  utter_ask_breath_pattern_angry:
+    - language: en
+      quick_replies:
+        - payload: /inform
+          title: Fast
+          type: postback
+        - payload: /inform
+          title: Slow
+          type: postback
+      text: |-
+        There is a connection between breath and mind.  
+        How do you breath when angry?
+  utter_ask_capture_lead:
+    - language: en
+      metadata: null
+      text: What is your first name?
+  utter_ask_connect_live:
+    - language: en
+      metadata: null
+      text: Anything else I can help you with?
+  utter_ask_edwedfewdf:
+    - custom: {}
+      language: en
+      metadata: null
+  utter_ask_email:
+    - language: en
+      metadata: null
+      text: What is your email?
+  utter_ask_experience_breath:
+    - language: en
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks: null
+        userInput: show
+      text: "placeholder for breath video \U0001F3D3\U0001F3A5"
+  utter_ask_financial_situation:
+    - language: en
+      metadata: null
+      text: Please describe your current financial situation
+  utter_ask_first_name:
+    - language: en
+      metadata: null
+      text: What is your first name?
+  utter_ask_gain:
+    - elements:
+        - buttons:
+            - payload: '/gain{"gain":"relaxation"}'
+              title: Relaxation
+              type: postback
+            - payload: '/gain{"gain":"focus"}'
+              title: Better Focus
+              type: postback
+          default_action: null
+          image_url: >-
+            https://www.skipprichard.com/wp-content/uploads/2020/01/kate-stone-matheson-uy5t-CJuIK4-unsplash-1080x675.jpg
+          subtitle: ''
+          title: I want
+        - buttons:
+            - payload: '/gain{"gain":"peace"}'
+              title: Peace of Mind
+              type: postback
+            - payload: '/gain{"gain":"happiness"}'
+              title: Happiness
+              type: postback
+          default_action: null
+          image_url: >-
+            https://specials-images.forbesimg.com/imageserve/606f84ec8bd34da6c1b3cff2/960x0.jpg?fit=scale
+          subtitle: ''
+          title: I want
+      language: en
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks: null
+        userInput: show
+    - elements:
+        - buttons:
+            - payload: '/gain{"gain":"pace"}'
+              title: Liniște sufletească
+              type: postback
+            - payload: '/gain{"gain":"fericire"}'
+              title: Fericire
+              type: postback
+          default_action: null
+          image_url: >-
+            https://specials-images.forbesimg.com/imageserve/606f84ec8bd34da6c1b3cff2/960x0.jpg?fit=scale
+          subtitle: ''
+          title: Vreau
+        - buttons:
+            - payload: '/gain{"gain":"relaxare"}'
+              title: Relaxare
+              type: postback
+            - payload: '/gain{"gain":"concentrare"}'
+              title: Concentrare mai bună
+              type: postback
+          image_url: >-
+            https://www.skipprichard.com/wp-content/uploads/2020/01/kate-stone-matheson-uy5t-CJuIK4-unsplash-1080x675.jpg
+          subtitle: ''
+          title: Vreau
+      language: ro
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks: null
+        userInput: show
+  utter_ask_gain_slot:
+    - elements:
+        - buttons:
+            - payload: '/gain{"gain_slot":"peace"}'
+              title: Peace of Mind
+              type: postback
+            - payload: '/gain{"gain_slot":"sleep"}'
+              title: Better Sleep
+              type: postback
+            - payload: '/gain{"gain_slot":"relaxation"}'
+              title: Relaxation
+              type: postback
+          default_action: null
+          image_url: >-
+            https://specials-images.forbesimg.com/imageserve/606f84ec8bd34da6c1b3cff2/960x0.jpg?fit=scale
+          subtitle: ''
+          title: I would like to gain
+        - buttons:
+            - payload: '/gain{"gain_slot":"happiness"}'
+              title: Happiness
+              type: postback
+            - payload: '/gain{"gain_slot":"focus"}'
+              title: Better Focus
+              type: postback
+            - payload: '/gain{"gain_slot":"productive"}'
+              title: Productive
+              type: postback
+          default_action: null
+          image_url: >-
+            https://www.skipprichard.com/wp-content/uploads/2020/01/kate-stone-matheson-uy5t-CJuIK4-unsplash-1080x675.jpg
+          subtitle: ''
+          title: I would like to gain
+        - buttons:
+            - payload: '/gain{"gain_slot":"otherg"}'
+              title: Something else
+              type: postback
+          default_action: null
+          image_url: >-
+            https://climateinvestigations.org/wp-content/uploads/2018/09/something-else-strategies.jpg
+          subtitle: ''
+          title: I would like to gain
+      language: en
+      metadata: null
+  utter_ask_impact:
+    - language: en
+      metadata: null
+      text: >2-
+         The SKY Breath meditation is a 3 day course, 3 hours each day over the weekend.  
+          
+         You get to learn a **powerful technique**.  
+          
+         The cost is $190 for a **limited time**.  
+          
+         * **home practice for life**  
+         * **community support** through group practice  
+        * **live & interactive sessions** by professional trainers  
+          
+          
+        What positive impact will you have in your life if you feel this **calm
+        and peace every day of your life**?
+  utter_ask_insight:
+    - language: en
+      metadata: null
+      text: ''
+  utter_ask_installment:
+    - language: en
+      metadata: null
+      quick_replies:
+        - payload: '/basics.yes{"installment":"true"}'
+          title: 'Yes'
+          type: postback
+        - payload: '/basics.no{"installment":"false"}'
+          title: 'No'
+          type: postback
+      text: Would you be able to pay the rest in installments?
+  utter_ask_interest:
+    - language: en
+      metadata: null
+      quick_replies:
+        - payload: '/signup{"interest":"signup"}'
+          title: Sign me up!
+          type: postback
+        - payload: '/later{"interest":"later"}'
+          title: 'in future or when planets are aligned :-)'
+          type: postback
+        - payload: '/not.interested{"interest":"cold"}'
+          title: 'better for my spouse or neighbor :-)'
+          type: postback
+      text: >-
+        When we talk about the course we meet 3 types of people. Which one do
+        you belong to?
+  utter_ask_interested_testimonial:
+    - language: en
+      metadata: null
+      quick_replies:
+        - payload: '/basics.yes{"interested_testimonial":"true"}'
+          title: 'yes'
+          type: postback
+        - payload: '/basics.no{"interested_testimonial":"false"}'
+          title: 'no'
+          type: postback
+      text: Would you like to see what others think about SKY breath?
+  utter_ask_meditation_experience:
+    - custom:
+        attachment:
+          payload:
+            src: >-
+              https://player.vimeo.com/video/554151251?title=0&byline=0&portrait=0&speed=0&badge=0&autopause=0&autoplay=1&controls=1&player_id=0&app_id=58479/embed
+            title: Double click on video for full screen
+          type: video
+        text: Are you enjoying the meditation?
+      language: en
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks:
+          pageEvents:
+            - event: click
+              payload: /try.meditation
+              selector: 'div#render-target textarea'
+        userInput: show
+  utter_ask_meditation_feedback:
+    - language: en
+      metadata: null
+      quick_replies:
+        - payload: '/meditation.feedback{"meditation_feedback":"great"}'
+          title: Relaxed
+          type: postback
+        - payload: '/meditation.feedback{"meditation_feedback":"good"}'
+          title: Less Thoughts
+          type: postback
+        - payload: '/meditation.feedback{"meditation_feedback":"thought bothered"}'
+          title: Thoughts bothered me
+          type: postback
+      text: How was the meditation?
+  utter_ask_number_installments:
+    - language: en
+      quick_replies:
+        - payload: '/inform{"number_installments":"1"}'
+          title: '1'
+          type: postback
+        - payload: '/inform{"number_installments":"2"}'
+          title: '2'
+          type: postback
+        - payload: '/inform{"number_installments":"3"}'
+          title: '3'
+          type: postback
+      text: How many monthly installments
+  utter_ask_other_reason:
+    - language: en
+      metadata: null
+      text: What is the reason then?
+  utter_ask_perform_testimonial:
+    - custom:
+        attachment:
+          payload:
+            src: >-
+              https://player.vimeo.com/video/554151811?title=0&byline=0&portrait=0&speed=0&badge=0&autopause=0&autoplay=1&controls=1&player_id=0&app_id=58479/embed
+            title: Double click on video for full screen
+          type: video
+        text: Was the testimonial impactful?
+      language: en
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks:
+          pageEvents:
+            - event: click
+              payload: /inform
+              selector: 'div#render-target textarea'
+        userInput: show
+  utter_ask_phone:
+    - language: en
+      metadata: null
+      text: What is your
+  utter_ask_present_course:
+    - language: en
+      metadata: null
+      text: >-
+        The SKY Breath meditation is a 3 day course, 3 hours each day over the
+        weekend.   
+
+        You get to learn a powerful technique.  
+
+        The cost is $190 for a limited time.  
+
+        You will learn a home practice for life and community support by getting
+        to practice the techniques in a group setting online.  
+          
+        What positive impact will you have in your life if you feel this calm
+        and peace every day?
+  utter_ask_reason:
+    - language: en
+      metadata:
+        customCss:
+          css: ' color: purple;'
+          style: custom
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks: null
+        userInput: show
+      quick_replies:
+        - payload: '/reason{"reason":"stress"}'
+          title: Stress
+          type: postback
+        - payload: '/reason{"reason":"anxiety"}'
+          title: Anxiety
+          type: postback
+        - payload: '/reason{"reason":"sleep"}'
+          title: Can't Sleep
+          type: postback
+        - payload: '/reason{"reason":"depression"}'
+          title: Depression
+          type: postback
+        - payload: '/reason{"reason":"health"}'
+          title: Health
+          type: postback
+        - payload: '/reason{"reason":"focus"}'
+          title: Can't Focus
+          type: postback
+      text: >-
+        To help you find if SKY meditation is for you, please pick the main
+        motivator or enter it below
+    - language: ro
+      metadata:
+        customCss:
+          css: ' color: purple;'
+          style: custom
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks: null
+        userInput: show
+      quick_replies:
+        - payload: '/reason{"reason":"stress"}'
+          title: Stres
+          type: postback
+        - payload: '/reason{"reason":"anxiety"}'
+          title: Anxietate
+          type: postback
+        - payload: '/reason{"reason":"sleep"}'
+          title: Nu pot dormi
+          type: postback
+        - payload: '/reason{"reason":"depression"}'
+          title: Depresie
+          type: postback
+        - payload: '/reason{"reason":"health"}'
+          title: Sanatate
+          type: postback
+        - payload: '/reason{"reason":"focus"}'
+          title: Nu ma pot concentra
+          type: postback
+      text: >-
+        Pentru a vă ajuta să aflați dacă meditația SKY este pentru dvs., alegeți
+        motivatorul principal sau introduceți-l mai jos
+  utter_ask_reason_slot:
+    - buttons:
+        - payload: '/reason{"reason_slot":"stress"}'
+          title: Stress
+          type: postback
+        - payload: '/reason{"reason_slot":"anxiety"}'
+          title: Anxiety
+          type: postback
+        - payload: '/reason{"reason_slot":"otherv"}'
+          title: Depression
+          type: postback
+        - payload: '/reason{"reason_slot":"thoughts"}'
+          title: Too Many Thoughts
+          type: postback
+        - payload: '/reason{"reason_slot":"attention"}'
+          title: Attention Issues
+          type: postback
+        - payload: '/reason{"reason_slot":"anger"}'
+          title: Anger Issues
+          type: postback
+        - payload: '/reason{"slot_reason":"health"}'
+          title: Health
+          type: postback
+      language: en
+      metadata: null
+      text: >-
+        To help you find if SKY meditation is for you, please pick the main
+        motivator or enter it below
+  utter_ask_sasddwedwedw:
+    - language: en
+      text: ''
+  utter_ask_save_lead:
+    - language: en
+      metadata: null
+      quick_replies:
+        - payload: '/basics.yes{"save_lead":"true"}'
+          title: 'yes'
+          type: postback
+        - payload: '/basics.no{"save_lead":"false"}'
+          title: 'no'
+          type: postback
+      text: Would you like to leave your contact info to be in touch?
+  utter_ask_see_courses:
+    - language: en
+      metadata: null
+      text: ''
+  utter_ask_stress_cause:
+    - buttons:
+        - payload: '/inform{"stress_cause":"relationships"}'
+          title: Relationships
+          type: postback
+        - payload: '/inform{"stress_cause":"work"}'
+          title: Work
+          type: postback
+        - payload: '/inform{"stress_cause":"finances"}'
+          title: Finances
+          type: postback
+        - payload: '/inform{"stress_cause":"health"}'
+          title: Health
+          type: postback
+      language: en
+      metadata: null
+      text: What causes stress in your life?
+    - buttons:
+        - payload: '/inform{"stress_cause":"relationships"}'
+          title: Relațiile
+          type: postback
+        - payload: '/inform{"stress_cause":"work"}'
+          title: Munca
+          type: postback
+        - payload: '/inform{"stress_cause":"finance"}'
+          title: Finanțele
+          type: postback
+        - payload: '/inform{"stress_cause":"health"}'
+          title: Sănătatea
+          type: postback
+      language: ro
+      metadata: null
+      text: Ce cauzează stresul în viața ta?
+  utter_ask_timezone:
+    - language: en
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks:
+          pageEvents:
+            - event: click
+              payload: /inform
+              selector: 'div#render-target textarea'
+        userInput: show
+      quick_replies:
+        - title: PST
+          type: web_url
+          url: >-
+            https://members.us.artofliving.org/?timeZoneFilter=%7B%22name%22%3A%22Pacific%22%2C%22value%22%3A%22PST%22%7D&courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D
+        - title: EST
+          type: web_url
+          url: >-
+            https://members.us.artofliving.org/?courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D&timeZoneFilter=%7B%22name%22%3A%22Eastern%22%2C%22value%22%3A%22EST%22%7D
+        - title: CST
+          type: web_url
+          url: >-
+            https://members.us.artofliving.org/?courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D&timeZoneFilter=%7B%22name%22%3A%22Central%22%2C%22value%22%3A%22CST%22%7D
+        - title: MT
+          type: web_url
+          url: >-
+            https://members.us.artofliving.org/?courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D&timeZoneFilter=%7B%22name%22%3A%22Mountain%22%2C%22value%22%3A%22MST%22%7D
+        - title: Hawaii
+          type: web_url
+          url: >-
+            https://members.us.artofliving.org/?courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D&timeZoneFilter=%7B%22name%22%3A%22Hawaii%22%2C%22value%22%3A%22HST%22%7D
+      text: Which time zone are you in?
+  utter_ask_want_breath_experience:
+    - buttons:
+        - payload: '/basics.yes{"want_breath_experience":"true"}'
+          title: 'yes'
+          type: postback
+        - payload: '/basics.no{"want_breath_experience":"false"}'
+          title: 'no'
+          type: postback
+      language: en
+      metadata: null
+      text: |-
+        There is a link between breath and mind  
+        How we breath influences how we feel  
+          
+        Would you like to experience a powerful breathing technique?
+  utter_ask_want_meditation_experience:
+    - buttons:
+        - payload: '/basics.yes{"want_meditation_experience":"true"}'
+          title: 'yes'
+          type: postback
+        - payload: '/basics.no{"want_meditation_experience":"false"}'
+          title: 'no'
+          type: postback
+      language: en
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks: null
+        userInput: disable
+      text: Would you like to experience a unique meditation?
+  utter_ask_want_talk:
+    - language: en
+      metadata: null
+      quick_replies:
+        - payload: '/basics.yes{"want_talk":"true"}'
+          title: 'yes'
+          type: postback
+        - payload: '/basics.no{"want_talk":"false"}'
+          title: 'no'
+          type: postback
+      text: Would you like to talk to an instructor?
+  utter_dJXwSHqWf:
+    - language: en
+      text: I'm outside form 3
+  utter_dcotSZ6n_:
+    - language: en
+      text: what else I can help you today?
+  utter_default:
+    - language: en
+      text: Sorry I didn't get that. Can you rephrase?
+  utter_disambiguation:
+    - language: en
+      metadata: null
+      quick_replies:
+        - payload: /reach_agent
+          title: Something else
+          type: postback
+      text: 'Sorry, was that about'
+  utter_dlTQI2eOY:
+    - language: en
+      text: Sahaj Samadhi Meditation is best for your condition
+  utter_ehk_YFoIf:
+    - language: en
+      text: >-
+        It is a LIVE ONLINE 3-day course with a **certified instructor** to drop
+        stress and anxiety in only 3 days!
+  utter_fggBuBuQT:
+    - language: en
+      text: What else I can help you today after talking to human?
+  utter_heGtgVTTfm:
+    - language: en
+      text: >-
+        I thought you might want to reflect about what is important in your
+        life, but is up to you
+  utter_hi:
+    - language: en
+      metadata: null
+      text: Hi!
+  utter_i1Qif8PaB:
+    - language: en
+      text: You can call 800.000.0000 to connect to an instructor
+  utter_invalid_email:
+    - language: en
+      metadata: null
+      text: Please enter a valid email address
+  utter_invalid_first_name:
+    - language: en
+      metadata: null
+      text: I was expecting a longer first name
+  utter_invalid_number_installments:
+    - language: en
+      metadata: null
+      text: Please enter a valid number
+  utter_kAks2vC68:
+    - language: en
+      text: You can call 800.000.0000 to connect to an instructor.
+  utter_lU5OY_t7h:
+    - language: en
+      text: handle different
+  utter_lpWrsCJ7h:
+    - language: en
+      text: Is there anything else I can help you with?
+  utter_mrSkN0Rfd:
+    - language: en
+      text: >-
+        SKY Breath can help reduce the level of sugar in the blood, along with
+        lowering blood pressure, and reducing the symptoms.  
+
+
+        Practicing daily SKY Breath  Meditation can help reduce stress in the
+        mind and body. This, in turn, reduces glucagons and can also help
+        improve insulin action.  
+  utter_s6ck4g2hG:
+    - language: en
+      text: this my not so good joke
+  utter_tNVAXLyjC:
+    - image: 'https://skyschools.org/wp-content/uploads/2020/06/key-findings.png'
+      language: en
+  utter_valid_email:
+    - language: en
+      text: Thank you
+  utter_valid_timezone:
+    - language: en
+      text: Thank you
+  utter_yg3mdJIDX:
+    - language: en
+      text: Thank you. We will contact you with next steps
+  utter_zV8o1XCz3:
+    - language: en
+      text: >-
+        Participants who practiced SKY Breath Meditation experienced the
+        greatest **mental health**, **social connectedness**, **positive
+        emotions**, **reduced stress levels, depression**, and **mindfulness
+        benefits**.
+session_config: {}
+slots:
+  afford_amount:
+    max_value: 190
+    min_value: 50
+    type: float
+  amount-of-money:
+    max_value: 190
+    type: float
+  breath_anxious:
+    type: text
+  breath_experience:
+    type: bool
+  breath_feedback:
+    type: categorical
+    values:
+      - Good
+      - Energized
+      - Tingling
+  breath_pattern:
+    type: text
+  breath_pattern_angry:
+    type: text
+  connect_live:
+    type: text
+  disambiguation_message:
+    type: unfeaturized
+  email:
+    type: text
+  fallback_language:
+    initial_value: en
+    type: unfeaturized
+  financial_plan:
+    type: categorical
+    values:
+      - scholarship
+      - installment
+      - review
+  financial_situation:
+    type: text
+  first_name:
+    type: text
+  gain:
+    type: categorical
+    values:
+      - peace
+      - happiness
+      - relaxation
+  handle_different:
+    type: bool
+  impact:
+    type: text
+  insight:
+    type: categorical
+    values:
+      - live
+      - contact
+      - low
+      - continue
+  installment:
+    type: bool
+  interest:
+    type: categorical
+    values:
+      - signup
+      - cold
+      - later
+  interested_testimonial:
+    type: bool
+  last_name:
+    type: text
+  meditation_experience:
+    type: bool
+  meditation_feedback:
+    type: categorical
+    values:
+      - great
+      - good
+      - thought bothered
+  number:
+    initial_value: 20
+    max_value: 190
+    type: float
+  number_installments:
+    max_value: 4
+    min_value: 1
+    type: float
+  perform_testimonial:
+    type: bool
+  phone-number:
+    type: text
+  reason:
+    type: categorical
+    values:
+      - stress
+      - anxiety
+      - health
+      - depression
+      - anger
+      - fear
+      - breath
+  requested_slot:
+    type: categorical
+    values:
+      - interest
+      - timezone
+      - want_talk
+      - save_lead
+      - first_name
+      - email
+      - interested_testimonial
+      - impact
+      - stress_cause
+      - want_breath_experience
+      - breath_experience
+      - want_meditation_experience
+      - meditation_experience
+      - reason
+      - gain
+      - breath_anxious
+      - breath_pattern
+      - meditation_feedback
+      - breath_feedback
+      - perform_testimonial
+      - financial_situation
+      - installment
+      - number_installments
+      - amount-of-money
+  save_lead:
+    type: bool
+  stress_cause:
+    type: categorical
+    values:
+      - relationships
+      - work
+      - finances
+      - health
+  timezone:
+    type: categorical
+    values:
+      - PST
+      - EST
+      - CST
+  want_breath_experience:
+    type: bool
+  want_meditation_experience:
+    type: bool
+  want_talk:
+    type: bool

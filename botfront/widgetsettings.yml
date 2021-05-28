@@ -1,0 +1,19 @@
+title: Wasssupp
+subtitle: Happy to help
+inputTextFieldHint: Type your message...
+initPayload: /get_started
+hideWhenNotConnected: true
+showFullScreenButton: true
+displayUnreadCount: true
+customData:
+  language: en
+mainColor: '#ffffff'
+conversationBackgroundColor: '#ffffff'
+userBackgroundColor: '#e8e9fd'
+userTextColor: '#6562d7'
+assistTextColor: '#070707'
+openLauncherImage: >-
+  https://www.artofliving.org/sites/www.artofliving.org/files/images/logo/AOL_logo_no_line.png
+closeImage: >-
+  https://www.artofliving.org/sites/www.artofliving.org/files/image-grid-gallery/slide%202_0.jpg
+assistBackgoundColor: '#fbf7f7'
