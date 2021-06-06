@@ -399,11 +399,6 @@ forms:
           target: meditation_experience_max
           type: condition
         - condition: null
-          id: ewant_meditation_experience-meditation_feedback
-          source: want_meditation_experience
-          target: meditation_feedback
-          type: condition
-        - condition: null
           id: emeditation_experience_mid-meditation_feedback
           source: meditation_experience_mid
           target: meditation_feedback
@@ -417,6 +412,11 @@ forms:
           id: ewant_breath_experience-want_meditation_experience
           source: want_breath_experience
           target: want_meditation_experience
+          type: condition
+        - condition: null
+          id: ewant_meditation_experience-interested_testimonial
+          source: want_meditation_experience
+          target: interested_testimonial
           type: condition
       nodes:
         - id: '1'
@@ -492,7 +492,7 @@ forms:
           type: slot
         - id: meditation_experience
           position:
-            x: -60
+            x: -120
             'y': 1720
           slotName: meditation_experience
           type: slot
@@ -522,8 +522,8 @@ forms:
           type: slot
         - id: meditation_feedback
           position:
-            x: 80
-            'y': 1940
+            x: -420
+            'y': 1980
           slotName: meditation_feedback
           type: slot
         - id: breath_feedback
@@ -561,13 +561,13 @@ forms:
         - id: meditation_experience_mid
           position:
             x: -380
-            'y': 1720
+            'y': 1700
           slotName: meditation_experience_mid
           type: slot
         - id: meditation_experience_max
           position:
             x: -680
-            'y': 1720
+            'y': 1640
           slotName: meditation_experience_max
           type: slot
     groupName: Wassup group
@@ -913,7 +913,7 @@ forms:
             type: from_text
         name: meditation_experience_max
         utter_on_new_valid_slot: false
-    updatedAt: 1622940627546
+    updatedAt: 1622948308543
   scholarship_form:
     collect_in_botfront: null
     description: null
@@ -1617,17 +1617,37 @@ responses:
           type: video
         text: Are you enjoying the meditation?
       language: en
-      metadata: null
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks:
+          pageEvents:
+            - event: click
+              payload: /try.meditation
+              selector: 'div#render-target textarea'
+        userInput: show
   utter_ask_meditation_experience_mid:
     - custom:
         attachment:
           payload:
-            src: 'https://www.youtube.com/embed/ChMzCnz9YSU?autoplay=1'
+            src: 'https://www.youtube.com/embed/ChMzCnz9YSU?autoplay=1&controls=0'
             title: Double click on video for full screen
           type: video
         text: Are you enjoying the meditation?
       language: en
-      metadata: null
+      metadata:
+        forceClose: false
+        forceOpen: false
+        linkTarget: _blank
+        pageChangeCallbacks: null
+        pageEventCallbacks:
+          pageEvents:
+            - event: click
+              payload: /try.meditation
+              selector: 'div#render-target textarea'
+        userInput: show
   utter_ask_meditation_feedback:
     - language: en
       metadata: null
@@ -1884,7 +1904,7 @@ responses:
         - payload: '/inform{"want_meditation_experience":"10"}'
           title: 10 min
           type: postback
-        - payload: /inform
+        - payload: '/inform{"want_meditation_experience":"15"}'
           title: 15 min - full experience
           type: postback
         - payload: '/inform{"want_meditation_experience":"no"}'
