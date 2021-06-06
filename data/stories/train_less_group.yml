@@ -4,7 +4,6 @@ stories:
       - intent: get_started
         entities: []
       - action: utter_5ZMUVKDBz
-      - action: action_set_insight
       - checkpoint: link-to-Intro Form Story/a76968e0-ef9f-4634-949d-e6d6ba154e38
     metadata:
       group: Train less group

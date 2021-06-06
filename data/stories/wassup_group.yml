@@ -123,7 +123,7 @@ stories:
     steps:
       - checkpoint: Intro_Form_Story__branches
       - active_loop: null
-      - action: utter_YuNNhNbsU
+      - action: utter_kAks2vC68
     metadata:
       group: Wassup group
   - story: Intro Form Story__Impact
@@ -158,24 +158,6 @@ stories:
       - action: utter__eXjuFBsM
     metadata:
       group: Wassup group
-  - story: Intro Form Story__Low score
-    steps:
-      - checkpoint: Intro_Form_Story__branches
-      - active_loop: null
-      - slot_was_set:
-          - handle_different: true
-      - action: utter_lU5OY_t7h
-    metadata:
-      group: Wassup group
-  - story: Intro Form Story__Want talk
-    steps:
-      - checkpoint: Intro_Form_Story__branches
-      - active_loop: null
-      - slot_was_set:
-          - want_talk: true
-      - action: utter_kAks2vC68
-    metadata:
-      group: Wassup group
   - story: Intro Form Story__What is SKY
     steps:
       - checkpoint: Intro_Form_Story__branches
@@ -200,6 +182,19 @@ stories:
       - action: utter_ehk_YFoIf
     metadata:
       group: Wassup group
+  - story: Low Score
+    steps:
+      - intent: get_started
+        entities: []
+      - action: utter_PPuiDj6Fj
+      - action: intro_form
+      - active_loop: intro_form
+      - active_loop: null
+      - slot_was_set:
+          - handle_different: true
+      - action: utter_GJMDgg1Ya
+    metadata:
+      group: Wassup group
   - story: Meditation experience
     steps:
       - action: utter__Pboxoyeb
@@ -211,6 +206,19 @@ stories:
         user: I want to sign up
         entities: []
       - action: utter_NSfT8viOG
+    metadata:
+      group: Wassup group
+  - story: Talk to human form path
+    steps:
+      - intent: get_started
+        entities: []
+      - action: utter_v-jMIpmGI
+      - action: intro_form
+      - active_loop: intro_form
+      - active_loop: null
+      - slot_was_set:
+          - call: true
+      - action: utter_ELS17D6x-
     metadata:
       group: Wassup group
 rules: []

@@ -17,8 +17,8 @@ language: ro
 
 policies:
   - name: TEDPolicy
-    epochs: 200
-    max_history: 15
+    epochs: 100
+    max_history: 5
     constrain_similarities: True
     model_confidence: cosine
     batch_size:
@@ -26,3 +26,10 @@ policies:
       - 64
   - name: RulePolicy
   - name: AugmentedMemoizationPolicy
+  - name: rasa_addons.core.policies.BotfrontDisambiguationPolicy
+    fallback_trigger: 0.30
+    disambiguation_trigger: '$0 < 2 * $1'
+    n_suggestions: 2 # default value
+    excluded_intents:
+      - ^chitchat\..* # default value
+      - ^basics\..*

@@ -620,6 +620,13 @@ nlu:
       why is [sky]{"entity": "programs", "value": "own"} different
     metadata:
       canonical: true
+- intent: email
+  metadata:
+    language: en
+  examples: |
+    - Email is [hgww@dd.com](email)
+    - My email is [jui@ssa.com](email)
+    - [maria@dw.com](email)
 - intent: explain.kriya
   metadata:
     language: en
@@ -780,6 +787,8 @@ nlu:
       [happiness](gain)
   - text: |
       i want [peace](gain)
+  - text: |
+      [less stress](gain)
   - text: |
       [less thoughts](gain)
   - text: |
@@ -1071,13 +1080,11 @@ nlu:
   - text: |
       Can I only do two days?
   - text: |
-      Can it be done in [less](gain) time?
+      Can it be done in less time?
     metadata:
       canonical: true
   - text: |
       Cant it be less
-    metadata:
-      canonical: true
   - text: |
       Do you have one day courses
   - text: |
@@ -1116,6 +1123,7 @@ nlu:
     - Why should I answer?
     - why
     - why should I answer
+    - why should I share
 - synonym: Sahaj Samadhi Meditation
   examples: |
     - Art of Meditation

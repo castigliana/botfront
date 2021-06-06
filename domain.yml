@@ -4,7 +4,6 @@ actions:
   - action_botfront_fallback
   - action_botfront_mapping
   - action_scholarship
-  - action_set_insight
   - utter_-DujDtaQr
   - utter_0HMv3E0lp
   - utter_1e581hboi
@@ -18,13 +17,16 @@ actions:
   - utter_BL4P9ZzNB
   - utter_CzpzxTqaN
   - utter_DF__aWt5M
+  - utter_ELS17D6x-
+  - utter_GJMDgg1Ya
   - utter_NSfT8viOG
+  - utter_PPuiDj6Fj
   - utter_PXBM_nC9F
   - utter_Q2n0XuA0o
+  - utter_RvW3wMK5S
   - utter_TEZ7u-FQ3
   - utter_UqjeP9kb4
   - utter_YOnk4IJFa
-  - utter_YuNNhNbsU
   - utter__Pboxoyeb
   - utter__eXjuFBsM
   - utter_ask_afford_amount
@@ -48,6 +50,8 @@ actions:
   - utter_ask_interest
   - utter_ask_interested_testimonial
   - utter_ask_meditation_experience
+  - utter_ask_meditation_experience_max
+  - utter_ask_meditation_experience_mid
   - utter_ask_meditation_feedback
   - utter_ask_number_installments
   - utter_ask_other_reason
@@ -78,11 +82,11 @@ actions:
   - utter_invalid_first_name
   - utter_invalid_number_installments
   - utter_kAks2vC68
-  - utter_lU5OY_t7h
   - utter_lpWrsCJ7h
   - utter_mrSkN0Rfd
   - utter_s6ck4g2hG
   - utter_tNVAXLyjC
+  - utter_v-jMIpmGI
   - utter_valid_email
   - utter_valid_timezone
   - utter_yg3mdJIDX
@@ -199,37 +203,6 @@ forms:
           target: breath_experience
           type: condition
         - condition: null
-          id: ewant_breath_experience-want_meditation_experience
-          source: want_breath_experience
-          target: want_meditation_experience
-          type: condition
-        - condition:
-            children1:
-              9aabba88-cdef-4012-b456-71792dfd4a52:
-                properties:
-                  field: want_meditation_experience
-                  operator: is_exactly
-                  value:
-                    - 'true'
-                  valueSrc:
-                    - value
-                  valueType:
-                    - custom_text
-                type: rule
-            id: 88aa88bb-0123-4456-b89a-b1792b37a28a
-            properties:
-              conjunction: AND
-            type: group
-          id: ewant_meditation_experience-meditation_experience
-          source: want_meditation_experience
-          target: meditation_experience
-          type: condition
-        - condition: null
-          id: ewant_meditation_experience-interested_testimonial
-          source: want_meditation_experience
-          target: interested_testimonial
-          type: condition
-        - condition: null
           id: e1-reason
           source: '1'
           target: reason
@@ -295,11 +268,6 @@ forms:
           source: breath_experience
           target: breath_feedback
           type: condition
-        - condition: null
-          id: ebreath_feedback-want_meditation_experience
-          source: breath_feedback
-          target: want_meditation_experience
-          type: condition
         - condition:
             children1:
               babab8bb-89ab-4cde-b012-3179760b0c08:
@@ -357,6 +325,99 @@ forms:
           source: want_talk
           target: save_lead
           type: condition
+        - condition: null
+          id: ewant_talk-8d8d90e8-7197-4dde-a094-7cc8e4e29df2
+          source: want_talk
+          target: 8d8d90e8-7197-4dde-a094-7cc8e4e29df2
+          type: condition
+        - condition: null
+          id: ebreath_feedback-want_meditation_experience
+          source: breath_feedback
+          target: want_meditation_experience
+          type: condition
+        - condition:
+            children1:
+              89ba88a9-cdef-4012-b456-7179d027c51b:
+                properties:
+                  field: want_meditation_experience
+                  operator: is_exactly
+                  value:
+                    - '5'
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 8999998b-0123-4456-b89a-b179ceeef824
+            properties:
+              conjunction: AND
+            type: group
+          id: ewant_meditation_experience-meditation_experience
+          source: want_meditation_experience
+          target: meditation_experience
+          type: condition
+        - condition:
+            children1:
+              989b99b8-4567-489a-bcde-f179d02a3bd1:
+                properties:
+                  field: want_meditation_experience
+                  operator: is_exactly
+                  value:
+                    - '10'
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 8999998b-0123-4456-b89a-b179ceeef824
+            properties:
+              conjunction: AND
+            type: group
+          id: ewant_meditation_experience-meditation_experience_mid
+          source: want_meditation_experience
+          target: meditation_experience_mid
+          type: condition
+        - condition:
+            children1:
+              8aaba9a8-0123-4456-b89a-b179d02b1fb1:
+                properties:
+                  field: want_meditation_experience
+                  operator: is_exactly
+                  value:
+                    - '15'
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: 8999998b-0123-4456-b89a-b179ceeef824
+            properties:
+              conjunction: AND
+            type: group
+          id: ewant_meditation_experience-meditation_experience_max
+          source: want_meditation_experience
+          target: meditation_experience_max
+          type: condition
+        - condition: null
+          id: ewant_meditation_experience-meditation_feedback
+          source: want_meditation_experience
+          target: meditation_feedback
+          type: condition
+        - condition: null
+          id: emeditation_experience_mid-meditation_feedback
+          source: meditation_experience_mid
+          target: meditation_feedback
+          type: condition
+        - condition: null
+          id: emeditation_experience_max-meditation_feedback
+          source: meditation_experience_max
+          target: meditation_feedback
+          type: condition
+        - condition: null
+          id: ewant_breath_experience-want_meditation_experience
+          source: want_breath_experience
+          target: want_meditation_experience
+          type: condition
       nodes:
         - id: '1'
           position:
@@ -413,8 +474,8 @@ forms:
           type: slot
         - id: stress_cause
           position:
-            x: -200
-            'y': 360
+            x: -320
+            'y': 320
           slotName: stress_cause
           type: slot
         - id: want_breath_experience
@@ -429,16 +490,10 @@ forms:
             'y': 1260
           slotName: breath_experience
           type: slot
-        - id: want_meditation_experience
-          position:
-            x: 80
-            'y': 1640
-          slotName: want_meditation_experience
-          type: slot
         - id: meditation_experience
           position:
-            x: -220
-            'y': 1800
+            x: -60
+            'y': 1720
           slotName: meditation_experience
           type: slot
         - id: reason
@@ -467,8 +522,8 @@ forms:
           type: slot
         - id: meditation_feedback
           position:
-            x: -220
-            'y': 1960
+            x: 80
+            'y': 1940
           slotName: meditation_feedback
           type: slot
         - id: breath_feedback
@@ -490,6 +545,31 @@ forms:
           slotName: handle_different
           slotValue: true
           type: slotSet
+        - id: 8d8d90e8-7197-4dde-a094-7cc8e4e29df2
+          position:
+            x: -160
+            'y': 3000
+          slotName: call
+          slotValue: true
+          type: slotSet
+        - id: want_meditation_experience
+          position:
+            x: 80
+            'y': 1520
+          slotName: want_meditation_experience
+          type: slot
+        - id: meditation_experience_mid
+          position:
+            x: -380
+            'y': 1720
+          slotName: meditation_experience_mid
+          type: slot
+        - id: meditation_experience_max
+          position:
+            x: -680
+            'y': 1720
+          slotName: meditation_experience_max
+          type: slot
     groupName: Wassup group
     name: intro_form
     slots:
@@ -582,16 +662,10 @@ forms:
           - entity:
               - email
             group: null
-            intent:
-              - inform
+            intent: null
             not_intent: null
             role: null
             type: from_entity
-          - intent: null
-            not_intent:
-              - basics.request_handover
-              - basics.stop_or_cancel
-            type: from_text
         name: email
         utter_on_new_valid_slot: true
       - filling:
@@ -688,28 +762,6 @@ forms:
               - basics.request_handover
             type: from_text
         name: breath_experience
-        utter_on_new_valid_slot: false
-      - filling:
-          - entity:
-              - want_meditation_experience
-            group: null
-            intent:
-              - basics.yes
-              - basics.no
-            not_intent: []
-            role: null
-            type: from_entity
-          - intent:
-              - basics.yes
-            not_intent: []
-            type: from_intent
-            value: true
-          - intent:
-              - basics.no
-            not_intent: []
-            type: from_intent
-            value: false
-        name: want_meditation_experience
         utter_on_new_valid_slot: false
       - filling:
           - intent: null
@@ -839,7 +891,29 @@ forms:
             type: from_text
         name: perform_testimonial
         utter_on_new_valid_slot: false
-    updatedAt: 1622243364433
+      - filling:
+          - entity:
+              - want_meditation_experience
+            group: null
+            intent: []
+            not_intent: []
+            role: null
+            type: from_entity
+        name: want_meditation_experience
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: []
+            not_intent: []
+            type: from_text
+        name: meditation_experience_mid
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: []
+            not_intent: []
+            type: from_text
+        name: meditation_experience_max
+        utter_on_new_valid_slot: false
+    updatedAt: 1622940627546
   scholarship_form:
     collect_in_botfront: null
     description: null
@@ -1008,7 +1082,7 @@ forms:
             type: from_entity
         name: amount-of-money
         utter_on_new_valid_slot: false
-    updatedAt: 1621914696021
+    updatedAt: 1622661256601
 intents:
   - basics.request_handover
   - basics.stop_or_cancel
@@ -1129,6 +1203,12 @@ responses:
 
 
         The **Mindfulness** (MBSR) group did not show any significant changes.
+  utter_ELS17D6x-:
+    - language: en
+      text: Talk to 800
+  utter_GJMDgg1Ya:
+    - language: en
+      text: Handle different!
   utter_NSfT8viOG:
     - language: en
       metadata:
@@ -1139,7 +1219,7 @@ responses:
         pageEventCallbacks:
           pageEvents:
             - event: click
-              payload: /inform
+              payload: /get_started
               selector: 'div#render-target textarea'
         userInput: show
       quick_replies:
@@ -1164,6 +1244,9 @@ responses:
           url: >-
             https://members.us.artofliving.org/?courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D&timeZoneFilter=%7B%22name%22%3A%22Hawaii%22%2C%22value%22%3A%22HST%22%7D
       text: What time zone are you in?
+  utter_PPuiDj6Fj:
+    - language: en
+      text: Welcome!
   utter_PXBM_nC9F:
     - language: en
       metadata: null
@@ -1190,6 +1273,9 @@ responses:
       text: >-
         Learn more information about Sahaj Samadhi Meditation
         [here](https://www.artofliving.org/us-en/sahaj-samadhi-meditation)
+  utter_RvW3wMK5S:
+    - language: en
+      text: Handle different
   utter_TEZ7u-FQ3:
     - language: en
       text: Anything else I can help you with?
@@ -1207,10 +1293,6 @@ responses:
 
         Learn more information about Sahaj Samadhi Meditation
         [here](https://www.artofliving.org/us-en/sahaj-samadhi-meditation)
-  utter_YuNNhNbsU:
-    - language: en
-      metadata: null
-      text: Anything I can help you with?
   utter__Pboxoyeb:
     - custom:
         attachment:
@@ -1257,7 +1339,7 @@ responses:
         attachment:
           payload:
             src: >-
-              https://player.vimeo.com/video/484245991?title=0&byline=0&portrait=0&speed=0&badge=0&autopause=0&autoplay=1&controls=1&player_id=0&app_id=58479/embed
+              https://player.vimeo.com/video/554148497?title=0&byline=0&portrait=0&speed=0&badge=0&autopause=0&autoplay=1&controls=1&player_id=0&app_id=58479/embed
             title: Double click on video for full screen
           type: video
         text: Are you enjoying the breath technique?
@@ -1525,6 +1607,27 @@ responses:
               payload: /try.meditation
               selector: 'div#render-target textarea'
         userInput: show
+  utter_ask_meditation_experience_max:
+    - custom:
+        attachment:
+          payload:
+            src: >-
+              https://player.vimeo.com/video/554151251?title=0&byline=0&portrait=0&speed=0&badge=0&autopause=0&autoplay=1&controls=1&player_id=0&app_id=58479/embed
+            title: Double click on video for full screen
+          type: video
+        text: Are you enjoying the meditation?
+      language: en
+      metadata: null
+  utter_ask_meditation_experience_mid:
+    - custom:
+        attachment:
+          payload:
+            src: 'https://www.youtube.com/embed/ChMzCnz9YSU?autoplay=1'
+            title: Double click on video for full screen
+          type: video
+        text: Are you enjoying the meditation?
+      language: en
+      metadata: null
   utter_ask_meditation_feedback:
     - language: en
       metadata: null
@@ -1666,32 +1769,12 @@ responses:
         motivatorul principal sau introduceți-l mai jos
   utter_ask_reason_slot:
     - buttons:
-        - payload: '/reason{"reason_slot":"stress"}'
-          title: Stress
-          type: postback
-        - payload: '/reason{"reason_slot":"anxiety"}'
-          title: Anxiety
-          type: postback
-        - payload: '/reason{"reason_slot":"otherv"}'
-          title: Depression
-          type: postback
-        - payload: '/reason{"reason_slot":"thoughts"}'
-          title: Too Many Thoughts
-          type: postback
-        - payload: '/reason{"reason_slot":"attention"}'
-          title: Attention Issues
-          type: postback
-        - payload: '/reason{"reason_slot":"anger"}'
-          title: Anger Issues
-          type: postback
-        - payload: '/reason{"slot_reason":"health"}'
-          title: Health
+        - payload: ''
+          title: ''
           type: postback
       language: en
       metadata: null
-      text: >-
-        To help you find if SKY meditation is for you, please pick the main
-        motivator or enter it below
+      text: ''
   utter_ask_sasddwedwedw:
     - language: en
       text: ''
@@ -1795,11 +1878,17 @@ responses:
         Would you like to experience a powerful breathing technique?
   utter_ask_want_meditation_experience:
     - buttons:
-        - payload: '/basics.yes{"want_meditation_experience":"true"}'
-          title: 'yes'
+        - payload: '/inform{"want_meditation_experience":"5"}'
+          title: 5 min - get a taste
           type: postback
-        - payload: '/basics.no{"want_meditation_experience":"false"}'
-          title: 'no'
+        - payload: '/inform{"want_meditation_experience":"10"}'
+          title: 10 min
+          type: postback
+        - payload: /inform
+          title: 15 min - full experience
+          type: postback
+        - payload: '/inform{"want_meditation_experience":"no"}'
+          title: 'No'
           type: postback
       language: en
       metadata:
@@ -1878,10 +1967,8 @@ responses:
       text: Please enter a valid number
   utter_kAks2vC68:
     - language: en
-      text: You can call 800.000.0000 to connect to an instructor.
-  utter_lU5OY_t7h:
-    - language: en
-      text: handle different
+      metadata: null
+      text: Anything else I can help you?
   utter_lpWrsCJ7h:
     - language: en
       text: Is there anything else I can help you with?
@@ -1901,6 +1988,9 @@ responses:
   utter_tNVAXLyjC:
     - image: 'https://skyschools.org/wp-content/uploads/2020/06/key-findings.png'
       language: en
+  utter_v-jMIpmGI:
+    - language: en
+      text: Welcome!
   utter_valid_email:
     - language: en
       text: Thank you
@@ -1940,8 +2030,8 @@ slots:
     type: text
   breath_pattern_angry:
     type: text
-  connect_live:
-    type: text
+  call:
+    type: bool
   disambiguation_message:
     type: unfeaturized
   email:
@@ -1970,6 +2060,7 @@ slots:
   impact:
     type: text
   insight:
+    initial_value: continue
     type: categorical
     values:
       - live
@@ -1989,6 +2080,10 @@ slots:
   last_name:
     type: text
   meditation_experience:
+    type: bool
+  meditation_experience_max:
+    type: bool
+  meditation_experience_mid:
     type: bool
   meditation_feedback:
     type: categorical
@@ -2032,7 +2127,6 @@ slots:
       - stress_cause
       - want_breath_experience
       - breath_experience
-      - want_meditation_experience
       - meditation_experience
       - reason
       - gain
@@ -2041,6 +2135,9 @@ slots:
       - meditation_feedback
       - breath_feedback
       - perform_testimonial
+      - want_meditation_experience
+      - meditation_experience_mid
+      - meditation_experience_max
       - financial_situation
       - installment
       - number_installments
@@ -2063,6 +2160,11 @@ slots:
   want_breath_experience:
     type: bool
   want_meditation_experience:
-    type: bool
+    type: categorical
+    values:
+      - '5'
+      - '10'
+      - '15'
+      - 'no'
   want_talk:
     type: bool
