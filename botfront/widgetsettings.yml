@@ -7,7 +7,7 @@ showFullScreenButton: true
 displayUnreadCount: true
 customData:
   language: en
-mainColor: '#ffffff'
+mainColor: '#b26a6a'
 conversationBackgroundColor: '#ffffff'
 userBackgroundColor: '#e8e9fd'
 userTextColor: '#6562d7'

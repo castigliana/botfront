@@ -101,6 +101,8 @@ nlu:
   - text: |
       forget about it
   - text: |
+      get_started
+  - text: |
       is not for me
   - text: |
       leave
@@ -659,6 +661,40 @@ nlu:
       what is [kriya]{"entity": "programs", "value": "own"}
   - text: |
       what is [sky]{"entity": "programs", "value": "own"}
+- intent: feedback.bothered
+  metadata:
+    language: en
+  examples: |
+    - I didn't feel anything
+    - I didn't like it
+    - I hate it
+    - no impact
+    - not so good
+    - so so
+    - terrible
+- intent: feedback.good
+  metadata:
+    language: en
+  examples: |
+    - It was ok
+    - good
+- intent: feedback.great
+  metadata:
+    language: en
+  examples: |
+    - I enjoyed it
+    - I enjoyed the breathing technique
+    - I enjoyed the meditation
+    - I enjoyed the technique
+    - I felt great
+    - I felt wonderful
+    - I loved it
+    - I loved the meditation
+    - great
+    - great meditation
+    - love it
+    - loved it
+    - wonderful
 - intent: finance.issue
   metadata:
     language: en
@@ -869,13 +905,6 @@ nlu:
       maybe later
   - text: |
       some other time
-- intent: meditation.feedback
-  metadata:
-    language: en
-  examples: |
-    - I enjoyed the meditation
-    - I loved the meditation
-    - great meditation
 - intent: mental.disease
   metadata:
     language: en

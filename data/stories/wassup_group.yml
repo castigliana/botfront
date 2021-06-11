@@ -221,4 +221,34 @@ stories:
       - action: utter_ELS17D6x-
     metadata:
       group: Wassup group
+  - story: Try Bye
+    steps:
+      - intent: get_started
+        entities: []
+      - action: utter_uLktQbpSG
+      - action: intro_form
+      - active_loop: intro_form
+      - active_loop: null
+      - intent: chitchat.bye
+        user: bye
+        entities: []
+      - checkpoint: Try_Bye__branches
+    metadata:
+      group: Wassup group
+  - story: Try Bye__New Branch 1
+    steps:
+      - checkpoint: Try_Bye__branches
+      - slot_was_set:
+          - save_lead: true
+      - action: utter_GGLpvwZoD
+    metadata:
+      group: Wassup group
+  - story: Try Bye__New Branch 2
+    steps:
+      - checkpoint: Try_Bye__branches
+      - slot_was_set:
+          - save_lead: false
+      - action: utter_LRkzWBWHWv
+    metadata:
+      group: Wassup group
 rules: []
