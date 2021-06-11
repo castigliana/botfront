@@ -22,7 +22,6 @@ actions:
   - utter_GJMDgg1Ya
   - utter_LRkzWBWHWv
   - utter_NSfT8viOG
-  - utter_PHkopPBW_
   - utter_PPuiDj6Fj
   - utter_PXBM_nC9F
   - utter_Q2n0XuA0o
@@ -57,13 +56,11 @@ actions:
   - utter_ask_meditation_experience_mid
   - utter_ask_meditation_feedback
   - utter_ask_number_installments
-  - utter_ask_other_reason
   - utter_ask_perform_testimonial
   - utter_ask_phone
   - utter_ask_present_course
   - utter_ask_reason
   - utter_ask_reason_slot
-  - utter_ask_sasddwedwedw
   - utter_ask_save_lead
   - utter_ask_see_courses
   - utter_ask_stress_cause
@@ -78,9 +75,9 @@ actions:
   - utter_dlTQI2eOY
   - utter_ehk_YFoIf
   - utter_fggBuBuQT
+  - utter_fx1Ooi9Pr
   - utter_heGtgVTTfm
   - utter_hi
-  - utter_i1Qif8PaB
   - utter_invalid_email
   - utter_invalid_first_name
   - utter_invalid_number_installments
@@ -88,8 +85,10 @@ actions:
   - utter_lpWrsCJ7h
   - utter_mrSkN0Rfd
   - utter_s6ck4g2hG
+  - utter_sx0glX_sU
   - utter_tNVAXLyjC
   - utter_uLktQbpSG
+  - utter_uiSLv0IGh
   - utter_v-jMIpmGI
   - utter_valid_email
   - utter_valid_timezone
@@ -1078,7 +1077,7 @@ forms:
             type: from_text
         name: meditation_experience_max
         utter_on_new_valid_slot: false
-    updatedAt: 1623299796628
+    updatedAt: 1623380155763
   scholarship_form:
     collect_in_botfront: null
     description: null
@@ -1291,7 +1290,14 @@ responses:
       text: >-
         Research from Harvard, Yale & Stanford shows that SKY Meditation is the
         only program to show significant improvement across 6 measures of
-        well-being
+        well-being:
+
+
+        **Stress, Depression, Mental Health, Social Connectedness, Positive
+        Emotion and Mindfulness**.
+
+
+        The **Mindfulness** (MBSR) group did not show any significant changes.
   utter_1tCvKIpqZ:
     - language: ro
       text: La revedere
@@ -1361,7 +1367,7 @@ responses:
       text: >-
         Research from Harvard, Yale & Stanford shows that SKY Meditation is the
         only program to show significant improvement across 6 measures of
-        well-being: !!!
+        well-being: 
 
 
         **Stress, Depression, Mental Health, Social Connectedness, Positive
@@ -1416,9 +1422,6 @@ responses:
           url: >-
             https://members.us.artofliving.org/?courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D&timeZoneFilter=%7B%22name%22%3A%22Hawaii%22%2C%22value%22%3A%22HST%22%7D
       text: What time zone are you in?
-  utter_PHkopPBW_:
-    - language: en
-      text: Till the next time!
   utter_PPuiDj6Fj:
     - language: en
       text: Welcome!
@@ -1459,6 +1462,7 @@ responses:
         https://d9hhrg4mnvzow.cloudfront.net/event.us.artofliving.org/us-en/research/aa6828f1-infographics-1-yale-1_10id0xz0gz0b900t0fo000.png
       language: en
       metadata: null
+      text: null
   utter_YOnk4IJFa:
     - language: en
       metadata: null
@@ -1839,10 +1843,6 @@ responses:
           title: '3'
           type: postback
       text: How many monthly installments
-  utter_ask_other_reason:
-    - language: en
-      metadata: null
-      text: What is the reason then?
   utter_ask_perform_testimonial:
     - custom:
         attachment:
@@ -1958,9 +1958,6 @@ responses:
           type: postback
       language: en
       metadata: null
-      text: ''
-  utter_ask_sasddwedwedw:
-    - language: en
       text: ''
   utter_ask_save_lead:
     - language: en
@@ -2116,12 +2113,26 @@ responses:
       text: Sahaj Samadhi Meditation is best for your condition
   utter_ehk_YFoIf:
     - language: en
+      metadata: null
       text: >-
         It is a LIVE ONLINE 3-day course with a **certified instructor** to drop
         stress and anxiety in only 3 days!
+
+
+        You’ll gain a **life-transforming breathwork** technique backed by over
+        **100+ independent studies** you can practice anytime you need.
+
+
+        Using the science of breath, you can **raise your energy**, **manage
+        your emotions**, and **find lasting ease**...so you’re ready to face
+        your day. Every day.
   utter_fggBuBuQT:
     - language: en
       text: What else I can help you today after talking to human?
+  utter_fx1Ooi9Pr:
+    - image: >-
+        https://d9hhrg4mnvzow.cloudfront.net/event.us.artofliving.org/us-en/research/aa6828f1-infographics-1-yale-1_10id0xz0gz0b900t0fo000.png
+      language: en
   utter_heGtgVTTfm:
     - language: en
       text: >-
@@ -2134,9 +2145,6 @@ responses:
     - language: en
       metadata: null
       text: Hello
-  utter_i1Qif8PaB:
-    - language: en
-      text: You can call 800.000.0000 to connect to an instructor
   utter_invalid_email:
     - language: en
       metadata: null
@@ -2169,12 +2177,21 @@ responses:
   utter_s6ck4g2hG:
     - language: en
       text: this my not so good joke
+  utter_sx0glX_sU:
+    - image: 'https://skyschools.org/wp-content/uploads/2020/06/key-findings.png'
+      language: en
   utter_tNVAXLyjC:
     - image: 'https://skyschools.org/wp-content/uploads/2020/06/key-findings.png'
       language: en
+      metadata: null
+      text: null
   utter_uLktQbpSG:
     - language: en
       text: Welcome!
+  utter_uiSLv0IGh:
+    - image: >-
+        https://skyschools.org/wp-content/uploads/2020/06/green-research-depression-stress.png
+      language: en
   utter_v-jMIpmGI:
     - language: en
       text: Welcome!
