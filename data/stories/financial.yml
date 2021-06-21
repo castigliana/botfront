@@ -1,0 +1,40 @@
+stories:
+  - story: Cost
+    steps:
+      - intent: cost
+        user: what is the cost?
+        entities: []
+      - action: utter_wiGz5IbHQ
+    metadata:
+      group: Financial
+  - story: Financial Scholarship
+    steps:
+      - intent: finance.issue
+        user: I cannot afford the course
+        entities:
+          - finance: afford
+      - action: utter_5rLj9oADS
+      - action: scholarship_form
+      - active_loop: scholarship_form
+      - active_loop: null
+      - action: action_scholarship
+      - checkpoint: Financial_Scholarship__branches
+    metadata:
+      group: Financial
+  - story: Financial Scholarship__Review
+    steps:
+      - checkpoint: Financial_Scholarship__branches
+      - slot_was_set:
+          - financial_plan: review
+      - action: utter_OIH8_Bo2e
+    metadata:
+      group: Financial
+  - story: Financial Scholarship__Scholarship
+    steps:
+      - checkpoint: Financial_Scholarship__branches
+      - slot_was_set:
+          - financial_plan: scholarship
+      - action: utter_Pm14dmPYd
+    metadata:
+      group: Financial
+rules: []

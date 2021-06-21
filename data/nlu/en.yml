@@ -5,11 +5,9 @@ nlu:
     language: en
   examples:
   - text: |
-      [No]{"entity": "want_meditation_experience", "value": "false"}
+      No
   - text: |
-      [No]{"entity": "want_meditation_experience", "value": "false"}, I don't want
-    metadata:
-      canonical: true
+      No, I don't want
   - text: |
       nah
   - text: |
@@ -128,6 +126,8 @@ nlu:
       I do
   - text: |
       Ok
+  - text: |
+      Yes
   - text: |
       absolutely
   - text: |
@@ -506,6 +506,24 @@ nlu:
       why is [sky]{"entity": "programs", "value": "own"} blue
     metadata:
       canonical: true
+- intent: cost
+  metadata:
+    language: en
+  examples:
+  - text: |
+      cost
+  - text: |
+      what is the cost of the sky course
+  - text: |
+      what is the cost?
+    metadata:
+      canonical: true
+  - text: |
+      what is the price
+  - text: |
+      what is the price of the course
+  - text: |
+      why is the sky of the course
 - intent: diabetes
   metadata:
     language: en
@@ -625,10 +643,17 @@ nlu:
 - intent: email
   metadata:
     language: en
-  examples: |
-    - Email is [hgww@dd.com](email)
-    - My email is [jui@ssa.com](email)
-    - [maria@dw.com](email)
+  examples:
+  - text: |
+      Email is [hgww@dd.com](email)
+  - text: |
+      My email is [jui@ssa.com](email)
+  - text: |
+      john@gmail.com
+    metadata:
+      canonical: true
+  - text: |
+      [maria@dw.com](email)
 - intent: explain.kriya
   metadata:
     language: en
@@ -694,6 +719,7 @@ nlu:
     - great meditation
     - love it
     - loved it
+    - [relaxed](gain)
     - wonderful
 - intent: finance.issue
   metadata:
@@ -869,6 +895,14 @@ nlu:
       canonical: true
   - text: |
       why do i need to learn to breath
+- intent: inform
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Maria
+    metadata:
+      canonical: true
 - intent: installment
   metadata:
     language: en
@@ -916,6 +950,20 @@ nlu:
     - What do you recommend for seizures
     - schizophrenia
     - seizure
+- intent: next
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Continue
+  - text: |
+      What's next
+  - text: |
+      next
+  - text: |
+      what else can you help me with
+    metadata:
+      canonical: true
 - intent: no_say
   metadata:
     language: en

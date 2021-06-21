@@ -1,10 +1,74 @@
 stories:
-  - story: Get Started
+  - story: Benefits of Meditation
     steps:
-      - intent: get_started
+      - intent: benefits.meditation
+        user: Why should I meditate
         entities: []
-      - action: utter_5ZMUVKDBz
-      - checkpoint: link-to-Intro Form Story/a76968e0-ef9f-4634-949d-e6d6ba154e38
+      - action: utter_CzpzxTqaN
+    metadata:
+      group: Train less group
+  - story: Diabetes
+    steps:
+      - intent: diabetes
+        user: What do you recommend for diabetes
+        entities: []
+      - action: utter_mrSkN0Rfd
+    metadata:
+      group: Train less group
+  - story: Importance of Breath
+    steps:
+      - intent: importance.breath
+        entities: []
+      - action: utter_PXBM_nC9F
+    metadata:
+      group: Train less group
+  - story: Meditation experience
+    steps:
+      - action: utter__Pboxoyeb
+    metadata:
+      group: Train less group
+  - story: Mental Issues
+    steps:
+      - intent: mental.disease
+        user: I'm bipolar
+        entities: []
+      - action: utter_dlTQI2eOY
+      - action: utter_Q2n0XuA0o
+    metadata:
+      group: Train less group
+  - story: Pregnancy
+    steps:
+      - intent: pregnant
+        user: I'm pregnant
+        entities: []
+      - action: utter_YOnk4IJFa
+    metadata:
+      group: Train less group
+  - story: Sad story
+    steps:
+      - intent: wassup.sad
+        user: I'm sad
+        entities: []
+      - action: utter_0HMv3E0lp
+      - checkpoint: Sad_story__branches
+    metadata:
+      group: Train less group
+  - story: Sad story__joke
+    steps:
+      - checkpoint: Sad_story__branches
+      - intent: joke
+        user: I want a good joke
+        entities: []
+      - action: utter_s6ck4g2hG
+    metadata:
+      group: Train less group
+  - story: Sad story__music
+    steps:
+      - checkpoint: Sad_story__branches
+      - intent: music
+        user: play some music
+        entities: []
+      - action: utter_6oL6NLH6q
     metadata:
       group: Train less group
 rules:

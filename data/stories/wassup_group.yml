@@ -1,55 +1,78 @@
 stories:
-  - story: Benefits of Meditation
+  - story: Ask for phone
     steps:
-      - intent: benefits.meditation
-        user: Why should I meditate
-        entities: []
-      - action: utter_CzpzxTqaN
-    metadata:
-      group: Wassup group
-  - story: Diabetes
-    steps:
-      - intent: diabetes
-        user: What do you recommend for diabetes
-        entities: []
-      - action: utter_mrSkN0Rfd
-    metadata:
-      group: Wassup group
-  - story: Financial Issues
-    steps:
-      - intent: finance.issue
-        user: I cannot afford the course
-        entities:
-          - finance: afford
-      - action: utter_AAd8mBacO
-      - action: scholarship_form
-      - active_loop: scholarship_form
+      - action: contact_phone_form
+      - active_loop: contact_phone_form
       - active_loop: null
-      - action: action_scholarship
-      - checkpoint: Financial_Issues__branches
     metadata:
       group: Wassup group
-  - story: Financial Issues__Review
+  - story: Asks for human
     steps:
-      - checkpoint: Financial_Issues__branches
-      - slot_was_set:
-          - financial_plan: review
-      - action: utter_yg3mdJIDX
-    metadata:
-      group: Wassup group
-  - story: Financial Issues__Scholarship
-    steps:
-      - checkpoint: Financial_Issues__branches
-      - slot_was_set:
-          - financial_plan: scholarship
-      - action: utter_BL4P9ZzNB
-    metadata:
-      group: Wassup group
-  - story: Importance of Breath
-    steps:
-      - intent: importance.breath
+      - intent: basics.request_handover
+        user: talk to human
         entities: []
-      - action: utter_PXBM_nC9F
+      - action: utter_ELS17D6x-
+      - action: contact_phone_form
+      - active_loop: contact_phone_form
+      - active_loop: null
+    metadata:
+      group: Wassup group
+  - story: Bye
+    steps:
+      - intent: chitchat.bye
+        user: Bye
+        entities: []
+      - active_loop: null
+      - action: utter_UygdSuQjW
+      - action: action_set_filled_contact
+      - checkpoint: Bye__branches
+    metadata:
+      group: Wassup group
+  - story: Bye__contact filled
+    steps:
+      - checkpoint: Bye__branches
+      - slot_was_set:
+          - filled_contact: true
+      - action: utter_qJGEorSJV
+    metadata:
+      group: Wassup group
+  - story: Bye__contact not filled
+    steps:
+      - checkpoint: Bye__branches
+      - slot_was_set:
+          - filled_contact: false
+      - action: utter_MEzWeol10
+      - checkpoint: Bye__contact_not_filled__branches
+    metadata:
+      group: Wassup group
+  - story: Bye__contact not filled__ask for contact
+    steps:
+      - checkpoint: Bye__contact_not_filled__branches
+      - intent: basics.yes
+        user: 'Yes'
+        entities: []
+      - action: utter_EBoYdHC8J
+      - action: contact_email_form
+      - active_loop: contact_email_form
+      - active_loop: null
+      - action: utter_neBRD6eGp
+    metadata:
+      group: Wassup group
+  - story: Bye__contact not filled__no contact
+    steps:
+      - checkpoint: Bye__contact_not_filled__branches
+      - intent: basics.no
+        user: 'No'
+        entities: []
+      - action: utter_T-B6HQUTI
+    metadata:
+      group: Wassup group
+  - story: Get Started
+    steps:
+      - intent: get_started
+        entities: []
+      - action: utter_5ZMUVKDBz
+      - checkpoint: link-to-Intro Form Story/a76968e0-ef9f-4634-949d-e6d6ba154e38
     metadata:
       group: Wassup group
   - story: Intro Form Story
@@ -57,6 +80,7 @@ stories:
       - checkpoint: link-to-Intro Form Story/a76968e0-ef9f-4634-949d-e6d6ba154e38
       - action: intro_form
       - active_loop: intro_form
+      - active_loop: null
       - checkpoint: Intro_Form_Story__branches
     metadata:
       group: Wassup group
@@ -88,14 +112,15 @@ stories:
       - action: utter_sx0glX_sU
     metadata:
       group: Wassup group
-  - story: Intro Form Story__Bye
+  - story: Intro Form Story__Call
     steps:
       - checkpoint: Intro_Form_Story__branches
-      - intent: chitchat.bye
-        user: Bye
-        entities: []
+      - slot_was_set:
+          - call: true
+      - action: utter_Gpgur27XR
+      - action: contact_phone_form
+      - active_loop: contact_phone_form
       - active_loop: null
-      - action: utter_1tCvKIpqZ
     metadata:
       group: Wassup group
   - story: Intro Form Story__different
@@ -122,43 +147,12 @@ stories:
       - action: utter_1e581hboi
     metadata:
       group: Wassup group
-  - story: Intro Form Story__Happy Path
-    steps:
-      - checkpoint: Intro_Form_Story__branches
-      - active_loop: null
-      - action: utter_kAks2vC68
-    metadata:
-      group: Wassup group
-  - story: Intro Form Story__Impact
+  - story: Intro Form Story__Happy
     steps:
       - checkpoint: Intro_Form_Story__branches
       - slot_was_set:
-          - requested_slot: impact
-      - intent: why
-        user: Why do you need that?
-        entities: []
-      - action: utter_heGtgVTTfm
-      - checkpoint: link-to-Intro Form Story/a76968e0-ef9f-4634-949d-e6d6ba154e38
-    metadata:
-      group: Wassup group
-  - story: Intro Form Story__Interruptions
-    steps:
-      - checkpoint: Intro_Form_Story__branches
-      - intent: basics.stop_or_cancel
-        user: stop
-        entities: []
-      - active_loop: null
-      - action: utter_lpWrsCJ7h
-    metadata:
-      group: Wassup group
-  - story: Intro Form Story__Live Handoff
-    steps:
-      - checkpoint: Intro_Form_Story__branches
-      - intent: basics.request_handover
-        user: talk to human
-        entities: []
-      - active_loop: null
-      - action: utter__eXjuFBsM
+          - handle_different: true
+      - action: utter_swGZIdCWD
     metadata:
       group: Wassup group
   - story: Intro Form Story__What is SKY
@@ -185,73 +179,13 @@ stories:
       - action: utter_ehk_YFoIf
     metadata:
       group: Wassup group
-  - story: Low Score
+  - story: Stop
     steps:
-      - intent: get_started
+      - intent: basics.stop_or_cancel
+        user: stop
         entities: []
-      - action: utter_PPuiDj6Fj
-      - action: intro_form
-      - active_loop: intro_form
       - active_loop: null
-      - slot_was_set:
-          - handle_different: true
-      - action: utter_GJMDgg1Ya
-    metadata:
-      group: Wassup group
-  - story: Meditation experience
-    steps:
-      - action: utter__Pboxoyeb
-    metadata:
-      group: Wassup group
-  - story: Sign up
-    steps:
-      - intent: signup
-        user: I want to sign up
-        entities: []
-      - action: utter_NSfT8viOG
-    metadata:
-      group: Wassup group
-  - story: Talk to human form path
-    steps:
-      - intent: get_started
-        entities: []
-      - action: utter_v-jMIpmGI
-      - action: intro_form
-      - active_loop: intro_form
-      - active_loop: null
-      - slot_was_set:
-          - call: true
-      - action: utter_ELS17D6x-
-    metadata:
-      group: Wassup group
-  - story: Try Bye
-    steps:
-      - intent: get_started
-        entities: []
-      - action: utter_uLktQbpSG
-      - action: intro_form
-      - active_loop: intro_form
-      - active_loop: null
-      - intent: chitchat.bye
-        user: bye
-        entities: []
-      - checkpoint: Try_Bye__branches
-    metadata:
-      group: Wassup group
-  - story: Try Bye__New Branch 1
-    steps:
-      - checkpoint: Try_Bye__branches
-      - slot_was_set:
-          - save_lead: true
-      - action: utter_GGLpvwZoD
-    metadata:
-      group: Wassup group
-  - story: Try Bye__New Branch 2
-    steps:
-      - checkpoint: Try_Bye__branches
-      - slot_was_set:
-          - save_lead: false
-      - action: utter_LRkzWBWHWv
+      - action: utter_f-is--11U
     metadata:
       group: Wassup group
 rules: []

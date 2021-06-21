@@ -4,33 +4,35 @@ actions:
   - action_botfront_fallback
   - action_botfront_mapping
   - action_scholarship
+  - action_set_filled_contact
   - utter_-DujDtaQr
   - utter_0HMv3E0lp
   - utter_1e581hboi
-  - utter_1tCvKIpqZ
   - utter_2Vz7Ym2Ml
   - utter_3mSjuBBXg
   - utter_5ZMUVKDBz
+  - utter_5rLj9oADS
   - utter_6oL6NLH6q
   - utter_7q2ZSc0wM
-  - utter_AAd8mBacO
-  - utter_BL4P9ZzNB
   - utter_CzpzxTqaN
   - utter_DF__aWt5M
+  - utter_EBoYdHC8J
   - utter_ELS17D6x-
-  - utter_GGLpvwZoD
-  - utter_GJMDgg1Ya
-  - utter_LRkzWBWHWv
+  - utter_Gpgur27XR
+  - utter_MEzWeol10
   - utter_NSfT8viOG
-  - utter_PPuiDj6Fj
+  - utter_OIH8_Bo2e
   - utter_PXBM_nC9F
+  - utter_Pm14dmPYd
   - utter_Q2n0XuA0o
   - utter_RvW3wMK5S
+  - utter_T-B6HQUTI
   - utter_TEZ7u-FQ3
   - utter_UqjeP9kb4
+  - utter_UygdSuQjW
   - utter_YOnk4IJFa
   - utter__Pboxoyeb
-  - utter__eXjuFBsM
+  - utter__sKyZqd_z
   - utter_ask_afford_amount
   - utter_ask_amount-of-money
   - utter_ask_appointment
@@ -58,7 +60,7 @@ actions:
   - utter_ask_number_installments
   - utter_ask_perform_testimonial
   - utter_ask_phone
-  - utter_ask_present_course
+  - utter_ask_phone-number
   - utter_ask_reason
   - utter_ask_reason_slot
   - utter_ask_save_lead
@@ -74,31 +76,34 @@ actions:
   - utter_disambiguation
   - utter_dlTQI2eOY
   - utter_ehk_YFoIf
+  - utter_f-is--11U
+  - utter_fPTfktgDo
   - utter_fggBuBuQT
   - utter_fx1Ooi9Pr
-  - utter_heGtgVTTfm
   - utter_hi
   - utter_invalid_email
   - utter_invalid_first_name
   - utter_invalid_number_installments
-  - utter_kAks2vC68
-  - utter_lpWrsCJ7h
+  - utter_invalid_timezone
+  - utter_m6EXvY7-W
   - utter_mrSkN0Rfd
+  - utter_neBRD6eGp
+  - utter_qJGEorSJV
   - utter_s6ck4g2hG
+  - utter_swGZIdCWD
   - utter_sx0glX_sU
   - utter_tNVAXLyjC
-  - utter_uLktQbpSG
   - utter_uiSLv0IGh
-  - utter_v-jMIpmGI
   - utter_valid_email
+  - utter_valid_phone-number
   - utter_valid_timezone
-  - utter_yg3mdJIDX
+  - utter_wiGz5IbHQ
   - utter_zV8o1XCz3
 entities:
   - finance
   - programs
 forms:
-  contact_form:
+  contact_email_form:
     collect_in_botfront: null
     description: null
     graph_elements:
@@ -132,7 +137,7 @@ forms:
           slotName: email
           type: slot
     groupName: Wassup group
-    name: contact_form
+    name: contact_email_form
     slots:
       - filling:
           - entity:
@@ -142,7 +147,6 @@ forms:
             not_intent: []
             role: null
             type: from_entity
-            value: null
           - intent: []
             not_intent: []
             type: from_text
@@ -152,14 +156,79 @@ forms:
           - entity:
               - email
             group: null
-            intent: []
-            not_intent: []
+            intent: null
+            not_intent: null
             role: null
             type: from_entity
-            value: null
+          - intent: []
+            not_intent: []
+            type: from_text
         name: email
         utter_on_new_valid_slot: true
-    updatedAt: 1623205925018
+    updatedAt: 1624210322502
+  contact_phone_form:
+    collect_in_botfront: null
+    description: null
+    graph_elements:
+      edges:
+        - condition: null
+          id: e1-first_name
+          source: '1'
+          target: first_name
+          type: condition
+        - condition: null
+          id: efirst_name-phone-number
+          source: first_name
+          target: phone-number
+          type: condition
+      nodes:
+        - id: '1'
+          position:
+            x: 200
+            'y': 200
+          type: start
+        - id: first_name
+          position:
+            x: 120
+            'y': 360
+          slotName: first_name
+          type: slot
+        - id: phone-number
+          position:
+            x: 120
+            'y': 520
+          slotName: phone-number
+          type: slot
+    groupName: Wassup group
+    name: contact_phone_form
+    slots:
+      - filling:
+          - entity:
+              - first_name
+            group: null
+            intent: null
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent: []
+            not_intent: []
+            type: from_text
+        name: first_name
+        utter_on_new_valid_slot: false
+      - filling:
+          - entity:
+              - phone-number
+            group: null
+            intent: null
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent: []
+            not_intent: []
+            type: from_text
+        name: phone-number
+        utter_on_new_valid_slot: true
+    updatedAt: 1623889103607
   intro_form:
     collect_in_botfront: true
     description: Intro
@@ -393,33 +462,23 @@ forms:
           source: interested_testimonial
           target: impact
           type: condition
-        - condition: null
-          id: esave_lead-33c0b6f4-2d45-48d2-80d5-0ca575bdab2f
-          source: save_lead
-          target: 33c0b6f4-2d45-48d2-80d5-0ca575bdab2f
-          type: condition
         - condition:
             children1:
-              889aba9a-89ab-4cde-b012-3179ac336fd5:
+              ba9aa99a-cdef-4012-b456-717a273fc2b6:
                 properties:
                   field: want_talk
                   operator: is_exactly
                   value:
-                    - 'false'
+                    - 'true'
                   valueSrc:
                     - value
                   valueType:
                     - custom_text
                 type: rule
-            id: 8b988a8a-0123-4456-b89a-b179aaf4a2c1
+            id: bb89b898-0123-4456-b89a-b17a267a6c63
             properties:
               conjunction: AND
             type: group
-          id: ewant_talk-save_lead
-          source: want_talk
-          target: save_lead
-          type: condition
-        - condition: null
           id: ewant_talk-8d8d90e8-7197-4dde-a094-7cc8e4e29df2
           source: want_talk
           target: 8d8d90e8-7197-4dde-a094-7cc8e4e29df2
@@ -525,19 +584,34 @@ forms:
           target: save_lead
           type: condition
         - condition: null
+          id: esave_lead-76dc0000-c8ec-41d3-9cb8-45c0ef165376
+          source: save_lead
+          target: 76dc0000-c8ec-41d3-9cb8-45c0ef165376
+          type: condition
+        - condition: null
+          id: eemail-5d6acf22-ea58-4dc7-8158-38a532042dad
+          source: email
+          target: 5d6acf22-ea58-4dc7-8158-38a532042dad
+          type: condition
+        - condition: null
+          id: etimezone-fa09e20e-a77e-4975-8d6e-dc3ecd1ce76d
+          source: timezone
+          target: fa09e20e-a77e-4975-8d6e-dc3ecd1ce76d
+          type: condition
+        - condition: null
           id: ebreath_feedback-save_lead
           source: breath_feedback
           target: save_lead
           type: condition
         - condition: null
-          id: ewant_meditation_experience-33c0b6f4-2d45-48d2-80d5-0ca575bdab2f
-          source: want_meditation_experience
-          target: 33c0b6f4-2d45-48d2-80d5-0ca575bdab2f
+          id: ewant_breath_experience-d2e4d067-09e1-4978-b765-995c1070abe3
+          source: want_breath_experience
+          target: d2e4d067-09e1-4978-b765-995c1070abe3
           type: condition
         - condition: null
-          id: ewant_breath_experience-33c0b6f4-2d45-48d2-80d5-0ca575bdab2f
-          source: want_breath_experience
-          target: 33c0b6f4-2d45-48d2-80d5-0ca575bdab2f
+          id: ewant_talk-save_lead
+          source: want_talk
+          target: save_lead
           type: condition
       nodes:
         - id: '1'
@@ -553,20 +627,20 @@ forms:
           type: slot
         - id: timezone
           position:
-            x: -540
-            'y': 2840
+            x: -580
+            'y': 2920
           slotName: timezone
           type: slot
         - id: want_talk
           position:
-            x: -160
-            'y': 2840
+            x: -140
+            'y': 2860
           slotName: want_talk
           type: slot
         - id: save_lead
           position:
-            x: 340
-            'y': 2820
+            x: 260
+            'y': 2800
           slotName: save_lead
           type: slot
         - id: first_name
@@ -590,7 +664,7 @@ forms:
         - id: impact
           position:
             x: -500
-            'y': 2500
+            'y': 2520
           slotName: impact
           type: slot
         - id: stress_cause
@@ -601,8 +675,8 @@ forms:
           type: slot
         - id: want_breath_experience
           position:
-            x: 200
-            'y': 960
+            x: 360
+            'y': 860
           slotName: want_breath_experience
           type: slot
         - id: breath_experience
@@ -649,8 +723,8 @@ forms:
           type: slot
         - id: breath_feedback
           position:
-            x: 40
-            'y': 1280
+            x: 360
+            'y': 1460
           slotName: breath_feedback
           type: slot
         - id: perform_testimonial
@@ -659,17 +733,10 @@ forms:
             'y': 2340
           slotName: perform_testimonial
           type: slot
-        - id: 33c0b6f4-2d45-48d2-80d5-0ca575bdab2f
-          position:
-            x: 520
-            'y': 3000
-          slotName: handle_different
-          slotValue: true
-          type: slotSet
         - id: 8d8d90e8-7197-4dde-a094-7cc8e4e29df2
           position:
-            x: -160
-            'y': 3000
+            x: -240
+            'y': 3060
           slotName: call
           slotValue: true
           type: slotSet
@@ -691,6 +758,34 @@ forms:
             'y': 1480
           slotName: meditation_experience_max
           type: slot
+        - id: 76dc0000-c8ec-41d3-9cb8-45c0ef165376
+          position:
+            x: 520
+            'y': 3000
+          slotName: handle_different
+          slotValue: true
+          type: slotSet
+        - id: 5d6acf22-ea58-4dc7-8158-38a532042dad
+          position:
+            x: 220
+            'y': 3270
+          slotName: handle_different
+          slotValue: true
+          type: slotSet
+        - id: fa09e20e-a77e-4975-8d6e-dc3ecd1ce76d
+          position:
+            x: -580
+            'y': 3070
+          slotName: handle_different
+          slotValue: true
+          type: slotSet
+        - id: d2e4d067-09e1-4978-b765-995c1070abe3
+          position:
+            x: 340
+            'y': 1140
+          slotName: handle_different
+          slotValue: true
+          type: slotSet
     groupName: Wassup group
     name: intro_form
     slots:
@@ -718,7 +813,7 @@ forms:
               - basics.request_handover
             type: from_text
         name: timezone
-        utter_on_new_valid_slot: true
+        utter_on_new_valid_slot: false
       - filling:
           - entity:
               - want_talk
@@ -787,6 +882,9 @@ forms:
             not_intent: null
             role: null
             type: from_entity
+          - intent: []
+            not_intent: []
+            type: from_text
         name: email
         utter_on_new_valid_slot: true
       - filling:
@@ -814,7 +912,6 @@ forms:
       - filling:
           - intent: null
             not_intent:
-              - basics.stop_or_cancel
               - basics.request_handover
               - benefits.sky
               - why
@@ -822,6 +919,7 @@ forms:
               - finance.issue
               - not.interested
               - different
+              - bye
             type: from_text
         name: impact
         utter_on_new_valid_slot: false
@@ -1077,7 +1175,7 @@ forms:
             type: from_text
         name: meditation_experience_max
         utter_on_new_valid_slot: false
-    updatedAt: 1623380155763
+    updatedAt: 1624308948452
   scholarship_form:
     collect_in_botfront: null
     description: null
@@ -1165,7 +1263,7 @@ forms:
             'y': 500
           slotName: amount-of-money
           type: slot
-    groupName: Wassup group
+    groupName: Financial
     name: scholarship_form
     slots:
       - filling:
@@ -1227,6 +1325,9 @@ forms:
             not_intent: null
             role: null
             type: from_entity
+          - intent: []
+            not_intent: []
+            type: from_text
         name: email
         utter_on_new_valid_slot: false
       - filling:
@@ -1244,16 +1345,22 @@ forms:
             not_intent: []
             role: null
             type: from_entity
+          - intent: []
+            not_intent: []
+            type: from_text
         name: amount-of-money
         utter_on_new_valid_slot: false
-    updatedAt: 1622661256601
+    updatedAt: 1623950929280
 intents:
+  - basics.no
   - basics.request_handover
   - basics.stop_or_cancel
+  - basics.yes
   - benefits.meditation
   - benefits.sky
   - chitchat.bye
   - chitchat.greet
+  - cost
   - diabetes
   - different
   - explain.kriya
@@ -1263,10 +1370,10 @@ intents:
   - joke
   - mental.disease
   - music
+  - next
   - pregnant
   - signup
   - wassup.sad
-  - why
 responses:
   utter_-DujDtaQr:
     - image: >-
@@ -1298,12 +1405,6 @@ responses:
 
 
         The **Mindfulness** (MBSR) group did not show any significant changes.
-  utter_1tCvKIpqZ:
-    - language: ro
-      text: La revedere
-    - language: en
-      metadata: null
-      text: Bye
   utter_2Vz7Ym2Ml:
     - language: en
       text: >-
@@ -1322,6 +1423,14 @@ responses:
     - language: ro
       metadata: null
       text: Bine ati venit!
+  utter_5rLj9oADS:
+    - language: en
+      text: >-
+        I can help you with that. 
+
+
+        If you are interested in a scholarship, please provide some additional
+        information.
   utter_6oL6NLH6q:
     - language: en
       text: don't know how to play
@@ -1340,21 +1449,6 @@ responses:
         Using the science of breath, you can **raise your energy**, **manage
         your emotions**, and **find lasting ease**...so you’re ready to face
         your day. Every day.
-  utter_AAd8mBacO:
-    - language: en
-      metadata: null
-      text: >-
-        I can help you with that. 
-
-
-        If you are interested in a scholarship, please provide some additional
-        information.
-  utter_BL4P9ZzNB:
-    - language: en
-      text: |-
-        Thank you.
-
-        Great News! We will be able to offer a scholarship
   utter_CzpzxTqaN:
     - language: en
       text: >-
@@ -1375,18 +1469,35 @@ responses:
 
 
         The **Mindfulness** (MBSR) group did not show any significant changes.
+  utter_EBoYdHC8J:
+    - language: en
+      text: Great!
   utter_ELS17D6x-:
     - language: en
-      text: Talk to 800
-  utter_GGLpvwZoD:
+      metadata: null
+      text: >-
+        Please provide your name and phone number and we will call you within 5
+        minutes
+  utter_Gpgur27XR:
     - language: en
-      text: Bye..
-  utter_GJMDgg1Ya:
+      metadata: null
+      text: >-
+        What is your name and phone and we will give you call within the next
+        hour
+  utter_MEzWeol10:
     - language: en
-      text: Handle different!
-  utter_LRkzWBWHWv:
-    - language: en
-      text: let me ask you for contact
+      metadata: null
+      quick_replies:
+        - payload: /basics.yes
+          title: 'Yes'
+          type: postback
+        - payload: /basics.no
+          title: 'No'
+          type: postback
+      text: >-
+        Would you like to stay in touch and receive a free
+        [Masterclass](https://www.artofliving.org/us-en/sahaj-samadhi-meditation)
+        ?
   utter_NSfT8viOG:
     - language: en
       metadata:
@@ -1397,7 +1508,7 @@ responses:
         pageEventCallbacks:
           pageEvents:
             - event: click
-              payload: /get_started
+              payload: /next
               selector: 'div#render-target textarea'
         userInput: show
       quick_replies:
@@ -1422,9 +1533,9 @@ responses:
           url: >-
             https://members.us.artofliving.org/?courseTypeFilter=%7B%22name%22%3A%22SKY+Breath+Meditation%22%2C%22value%22%3A%2212371%3B811569%3B435714%22%7D&timeZoneFilter=%7B%22name%22%3A%22Hawaii%22%2C%22value%22%3A%22HST%22%7D
       text: What time zone are you in?
-  utter_PPuiDj6Fj:
+  utter_OIH8_Bo2e:
     - language: en
-      text: Welcome!
+      text: Thank you. We will contact you with the next steps.
   utter_PXBM_nC9F:
     - language: en
       metadata: null
@@ -1446,14 +1557,24 @@ responses:
 
 
         **90% of toxins** are eliminated through breath
+  utter_Pm14dmPYd:
+    - language: en
+      text: Great News! We will be able to offer a scholarship
   utter_Q2n0XuA0o:
     - language: en
+      metadata: null
       text: >-
         Learn more information about Sahaj Samadhi Meditation
         [here](https://www.artofliving.org/us-en/sahaj-samadhi-meditation)
   utter_RvW3wMK5S:
     - language: en
       text: Handle different
+  utter_T-B6HQUTI:
+    - language: en
+      text: |-
+        I understand.
+
+        Have a good day!
   utter_TEZ7u-FQ3:
     - language: en
       text: Anything else I can help you with?
@@ -1463,6 +1584,10 @@ responses:
       language: en
       metadata: null
       text: null
+  utter_UygdSuQjW:
+    - language: en
+      metadata: null
+      text: Bye
   utter_YOnk4IJFa:
     - language: en
       metadata: null
@@ -1483,10 +1608,11 @@ responses:
         text: Are you enjoying the meditation?
       language: en
       metadata: null
-  utter__eXjuFBsM:
+  utter__sKyZqd_z:
     - language: en
-      metadata: null
-      text: You can call 800.000.0000 to connect to an instructor
+      text: >-
+        Please provide your name and phone number and we will call you within 5
+        minutes
   utter_ask_afford_amount:
     - language: en
       metadata: null
@@ -1832,6 +1958,7 @@ responses:
       text: How was the meditation?
   utter_ask_number_installments:
     - language: en
+      metadata: null
       quick_replies:
         - payload: '/inform{"number_installments":"1"}'
           title: '1'
@@ -1868,22 +1995,10 @@ responses:
     - language: en
       metadata: null
       text: What is your
-  utter_ask_present_course:
+  utter_ask_phone-number:
     - language: en
       metadata: null
-      text: >-
-        The SKY Breath meditation is a 3 day course, 3 hours each day over the
-        weekend.   
-
-        You get to learn a powerful technique.  
-
-        The cost is $190 for a limited time.  
-
-        You will learn a home practice for life and community support by getting
-        to practice the techniques in a group setting online.  
-          
-        What positive impact will you have in your life if you feel this calm
-        and peace every day?
+      text: What is your phone?
   utter_ask_reason:
     - language: en
       metadata:
@@ -1970,7 +2085,7 @@ responses:
           title: 'no'
           type: postback
       text: >-
-        We understand. Would you like to leave your contact info to be in touch
+        We understand. Would you like to share your contact info to be in touch
         and get a free **Masterclass**
         [here](https://www.artofliving.org/us-en/sahaj-samadhi-meditation)?
   utter_ask_see_courses:
@@ -2020,7 +2135,7 @@ responses:
         pageEventCallbacks:
           pageEvents:
             - event: click
-              payload: /inform
+              payload: /next
               selector: 'div#render-target textarea'
         userInput: show
       quick_replies:
@@ -2090,7 +2205,7 @@ responses:
         - payload: '/basics.yes{"want_talk":"true"}'
           title: 'yes'
           type: postback
-        - payload: '/basics.no{"want_talk":"false"}'
+        - payload: '/basics.no{"want_talk":"false","handle_different":"true"}'
           title: 'no'
           type: postback
       text: Would you like to talk to an instructor?
@@ -2126,6 +2241,12 @@ responses:
         Using the science of breath, you can **raise your energy**, **manage
         your emotions**, and **find lasting ease**...so you’re ready to face
         your day. Every day.
+  utter_f-is--11U:
+    - language: en
+      text: Anything else I can help with?
+  utter_fPTfktgDo:
+    - language: en
+      text: Is there anything else you need help with?
   utter_fggBuBuQT:
     - language: en
       text: What else I can help you today after talking to human?
@@ -2133,11 +2254,6 @@ responses:
     - image: >-
         https://d9hhrg4mnvzow.cloudfront.net/event.us.artofliving.org/us-en/research/aa6828f1-infographics-1-yale-1_10id0xz0gz0b900t0fo000.png
       language: en
-  utter_heGtgVTTfm:
-    - language: en
-      text: >-
-        I thought you might want to reflect about what is important in your
-        life, but is up to you
   utter_hi:
     - language: en
       metadata: null
@@ -2157,13 +2273,13 @@ responses:
     - language: en
       metadata: null
       text: Please enter a valid number
-  utter_kAks2vC68:
+  utter_invalid_timezone:
     - language: en
       metadata: null
-      text: Anything else I can help you?
-  utter_lpWrsCJ7h:
+      text: 'Please type a valid timezone: PST, EST, CST, MT or Hawaii'
+  utter_m6EXvY7-W:
     - language: en
-      text: Is there anything else I can help you with?
+      text: happy
   utter_mrSkN0Rfd:
     - language: en
       text: >-
@@ -2174,9 +2290,20 @@ responses:
         Practicing daily SKY Breath  Meditation can help reduce stress in the
         mind and body. This, in turn, reduces glucagons and can also help
         improve insulin action.  
+  utter_neBRD6eGp:
+    - language: en
+      text: Thank you
+  utter_qJGEorSJV:
+    - language: en
+      metadata: null
+      text: Have a good day!
   utter_s6ck4g2hG:
     - language: en
       text: this my not so good joke
+  utter_swGZIdCWD:
+    - language: en
+      metadata: null
+      text: How else I can help with?
   utter_sx0glX_sU:
     - image: 'https://skyschools.org/wp-content/uploads/2020/06/key-findings.png'
       language: en
@@ -2185,28 +2312,31 @@ responses:
       language: en
       metadata: null
       text: null
-  utter_uLktQbpSG:
-    - language: en
-      text: Welcome!
   utter_uiSLv0IGh:
     - image: >-
         https://skyschools.org/wp-content/uploads/2020/06/green-research-depression-stress.png
       language: en
-  utter_v-jMIpmGI:
-    - language: en
-      text: Welcome!
   utter_valid_email:
     - language: en
       metadata: null
       text: >-
         Great! We will email you the details on how to access the
         **Masterclass**
+  utter_valid_phone-number:
+    - language: en
+      metadata: null
+      text: Thank you. We will give you a call within next 5 minutes
   utter_valid_timezone:
     - language: en
       text: Thank you
-  utter_yg3mdJIDX:
+  utter_wiGz5IbHQ:
     - language: en
-      text: Thank you. We will contact you with next steps
+      text: >-
+        The SKY Breath Meditation course fees is  $245, which is approximately a
+        40% discount on the original course fees of $395 per person). 
+
+
+        The student fee is $125 per person.
   utter_zV8o1XCz3:
     - language: en
       text: >-
@@ -2246,6 +2376,8 @@ slots:
   fallback_language:
     initial_value: en
     type: unfeaturized
+  filled_contact:
+    type: bool
   financial_plan:
     type: categorical
     values:
@@ -2310,6 +2442,12 @@ slots:
     type: bool
   phone-number:
     type: text
+  process_intro:
+    type: categorical
+    values:
+      - different
+      - happy
+      - call
   reason:
     type: categorical
     values:
@@ -2320,35 +2458,8 @@ slots:
       - anger
       - fear
       - breath
-  requested_slot:
-    type: categorical
-    values:
-      - first_name
-      - email
-      - interest
-      - timezone
-      - want_talk
-      - save_lead
-      - interested_testimonial
-      - impact
-      - stress_cause
-      - want_breath_experience
-      - breath_experience
-      - meditation_experience
-      - reason
-      - gain
-      - breath_anxious
-      - breath_pattern
-      - meditation_feedback
-      - breath_feedback
-      - perform_testimonial
-      - want_meditation_experience
-      - meditation_experience_mid
-      - meditation_experience_max
-      - financial_situation
-      - installment
-      - number_installments
-      - amount-of-money
+  registered:
+    type: bool
   save_lead:
     type: bool
   stress_cause:

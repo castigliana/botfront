@@ -1,50 +1,23 @@
 stories:
-  - story: Mental Issues
+  - story: Anything else to help with
     steps:
-      - intent: mental.disease
-        user: I'm bipolar
+      - checkpoint: >-
+          link-to-Anything else to help
+          with/f11098fc-86b3-496e-8a2b-e9839237ae3d
+      - intent: next
         entities: []
-      - action: utter_dlTQI2eOY
-      - action: utter_Q2n0XuA0o
+      - action: utter_fPTfktgDo
     metadata:
       group: Exceptions
-  - story: Pregnancy
+  - story: Sign up
     steps:
-      - intent: pregnant
-        user: I'm pregnant
+      - intent: signup
+        user: I want to sign up
         entities: []
-      - action: utter_YOnk4IJFa
-    metadata:
-      group: Exceptions
-  - story: Sad story
-    steps:
-      - intent: wassup.sad
-        user: I'm sad
-        entities: []
-      - action: utter_0HMv3E0lp
-      - checkpoint: Sad_story__branches
-    metadata:
-      group: Exceptions
-  - story: Sad story__joke
-    steps:
-      - checkpoint: Sad_story__branches
-      - intent: joke
-        user: I want a good joke
-        entities: []
-      - action: utter_s6ck4g2hG
-    metadata:
-      group: Exceptions
-  - story: Sad story__music
-    steps:
-      - checkpoint: Sad_story__branches
-      - intent: music
-        user: play some music
-        entities: []
-      - action: utter_6oL6NLH6q
-    metadata:
-      group: Exceptions
-  - story: try
-    steps: []
+      - action: utter_NSfT8viOG
+      - checkpoint: >-
+          link-to-Anything else to help
+          with/f11098fc-86b3-496e-8a2b-e9839237ae3d
     metadata:
       group: Exceptions
 rules: []
