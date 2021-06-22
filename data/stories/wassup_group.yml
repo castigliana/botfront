@@ -116,11 +116,8 @@ stories:
     steps:
       - checkpoint: Intro_Form_Story__branches
       - slot_was_set:
-          - call: true
-      - action: utter_Gpgur27XR
-      - action: contact_phone_form
-      - active_loop: contact_phone_form
-      - active_loop: null
+          - registered: true
+      - action: utter_vxBSWxvXB
     metadata:
       group: Wassup group
   - story: Intro Form Story__different

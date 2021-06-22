@@ -18,7 +18,6 @@ actions:
   - utter_DF__aWt5M
   - utter_EBoYdHC8J
   - utter_ELS17D6x-
-  - utter_Gpgur27XR
   - utter_MEzWeol10
   - utter_NSfT8viOG
   - utter_OIH8_Bo2e
@@ -46,6 +45,7 @@ actions:
   - utter_ask_email
   - utter_ask_financial_situation
   - utter_ask_first_name
+  - utter_ask_first_name_phone
   - utter_ask_gain
   - utter_ask_gain_slot
   - utter_ask_impact
@@ -95,8 +95,10 @@ actions:
   - utter_tNVAXLyjC
   - utter_uiSLv0IGh
   - utter_valid_email
+  - utter_valid_first_name_phone
   - utter_valid_phone-number
   - utter_valid_timezone
+  - utter_vxBSWxvXB
   - utter_wiGz5IbHQ
   - utter_zV8o1XCz3
 entities:
@@ -223,12 +225,12 @@ forms:
             not_intent: null
             role: null
             type: from_entity
-          - intent: []
-            not_intent: []
+          - intent: null
+            not_intent: null
             type: from_text
         name: phone-number
         utter_on_new_valid_slot: true
-    updatedAt: 1623889103607
+    updatedAt: 1624330246973
   intro_form:
     collect_in_botfront: true
     description: Intro
@@ -464,27 +466,6 @@ forms:
           type: condition
         - condition:
             children1:
-              ba9aa99a-cdef-4012-b456-717a273fc2b6:
-                properties:
-                  field: want_talk
-                  operator: is_exactly
-                  value:
-                    - 'true'
-                  valueSrc:
-                    - value
-                  valueType:
-                    - custom_text
-                type: rule
-            id: bb89b898-0123-4456-b89a-b17a267a6c63
-            properties:
-              conjunction: AND
-            type: group
-          id: ewant_talk-8d8d90e8-7197-4dde-a094-7cc8e4e29df2
-          source: want_talk
-          target: 8d8d90e8-7197-4dde-a094-7cc8e4e29df2
-          type: condition
-        - condition:
-            children1:
               99a8b989-4567-489a-bcde-f179ed9fe592:
                 properties:
                   field: breath_feedback
@@ -584,16 +565,6 @@ forms:
           target: save_lead
           type: condition
         - condition: null
-          id: esave_lead-76dc0000-c8ec-41d3-9cb8-45c0ef165376
-          source: save_lead
-          target: 76dc0000-c8ec-41d3-9cb8-45c0ef165376
-          type: condition
-        - condition: null
-          id: eemail-5d6acf22-ea58-4dc7-8158-38a532042dad
-          source: email
-          target: 5d6acf22-ea58-4dc7-8158-38a532042dad
-          type: condition
-        - condition: null
           id: etimezone-fa09e20e-a77e-4975-8d6e-dc3ecd1ce76d
           source: timezone
           target: fa09e20e-a77e-4975-8d6e-dc3ecd1ce76d
@@ -609,9 +580,45 @@ forms:
           target: d2e4d067-09e1-4978-b765-995c1070abe3
           type: condition
         - condition: null
-          id: ewant_talk-save_lead
-          source: want_talk
+          id: ewant_meditation_experience-save_lead
+          source: want_meditation_experience
           target: save_lead
+          type: condition
+        - condition:
+            children1:
+              b9a8aa98-cdef-4012-b456-717a3526c41c:
+                properties:
+                  field: want_talk
+                  operator: is_exactly
+                  value:
+                    - 'true'
+                  valueSrc:
+                    - value
+                  valueType:
+                    - custom_text
+                type: rule
+            id: a898bbb9-0123-4456-b89a-b17a346592d9
+            properties:
+              conjunction: AND
+            type: group
+          id: ewant_talk-phone-number
+          source: want_talk
+          target: phone-number
+          type: condition
+        - condition: null
+          id: ephone-number-first_name_phone
+          source: phone-number
+          target: first_name_phone
+          type: condition
+        - condition: null
+          id: efirst_name_phone-8d8d90e8-7197-4dde-a094-7cc8e4e29df2
+          source: first_name_phone
+          target: 8d8d90e8-7197-4dde-a094-7cc8e4e29df2
+          type: condition
+        - condition: null
+          id: ewant_talk-a06d7242-a06a-4bc6-87fc-62b45fa88483
+          source: want_talk
+          target: a06d7242-a06a-4bc6-87fc-62b45fa88483
           type: condition
       nodes:
         - id: '1'
@@ -628,7 +635,7 @@ forms:
         - id: timezone
           position:
             x: -580
-            'y': 2920
+            'y': 2880
           slotName: timezone
           type: slot
         - id: want_talk
@@ -645,13 +652,13 @@ forms:
           type: slot
         - id: first_name
           position:
-            x: 220
-            'y': 3000
+            x: 480
+            'y': 2960
           slotName: first_name
           type: slot
         - id: email
           position:
-            x: 220
+            x: 480
             'y': 3120
           slotName: email
           type: slot
@@ -723,8 +730,8 @@ forms:
           type: slot
         - id: breath_feedback
           position:
-            x: 360
-            'y': 1460
+            x: 40
+            'y': 1260
           slotName: breath_feedback
           type: slot
         - id: perform_testimonial
@@ -735,15 +742,15 @@ forms:
           type: slot
         - id: 8d8d90e8-7197-4dde-a094-7cc8e4e29df2
           position:
-            x: -240
-            'y': 3060
-          slotName: call
+            x: -140
+            'y': 3300
+          slotName: handle_different
           slotValue: true
           type: slotSet
         - id: want_meditation_experience
           position:
-            x: -160
-            'y': 1400
+            x: -100
+            'y': 1440
           slotName: want_meditation_experience
           type: slot
         - id: meditation_experience_mid
@@ -758,31 +765,36 @@ forms:
             'y': 1480
           slotName: meditation_experience_max
           type: slot
-        - id: 76dc0000-c8ec-41d3-9cb8-45c0ef165376
-          position:
-            x: 520
-            'y': 3000
-          slotName: handle_different
-          slotValue: true
-          type: slotSet
-        - id: 5d6acf22-ea58-4dc7-8158-38a532042dad
-          position:
-            x: 220
-            'y': 3270
-          slotName: handle_different
-          slotValue: true
-          type: slotSet
         - id: fa09e20e-a77e-4975-8d6e-dc3ecd1ce76d
           position:
             x: -580
-            'y': 3070
-          slotName: handle_different
+            'y': 3080
+          slotName: registered
           slotValue: true
           type: slotSet
         - id: d2e4d067-09e1-4978-b765-995c1070abe3
           position:
             x: 340
             'y': 1140
+          slotName: handle_different
+          slotValue: true
+          type: slotSet
+        - id: phone-number
+          position:
+            x: -140
+            'y': 3020
+          slotName: phone-number
+          type: slot
+        - id: first_name_phone
+          position:
+            x: -140
+            'y': 3180
+          slotName: first_name_phone
+          type: slot
+        - id: a06d7242-a06a-4bc6-87fc-62b45fa88483
+          position:
+            x: 160
+            'y': 3020
           slotName: handle_different
           slotValue: true
           type: slotSet
@@ -1093,11 +1105,13 @@ forms:
             value: great
           - intent:
               - feedback.good
+              - basics.yes
             not_intent: []
             type: from_intent
             value: good
           - intent:
               - feedback.bothered
+              - basics.no
             not_intent: []
             type: from_intent
             value: bothered
@@ -1125,11 +1139,13 @@ forms:
             value: great
           - intent:
               - feedback.good
+              - basics.yes
             not_intent: null
             type: from_intent
             value: good
           - intent:
               - feedback.bothered
+              - basics.no
             not_intent: []
             type: from_intent
             value: bothered
@@ -1175,7 +1191,26 @@ forms:
             type: from_text
         name: meditation_experience_max
         utter_on_new_valid_slot: false
-    updatedAt: 1624308948452
+      - filling:
+          - entity:
+              - phone-number
+            group: null
+            intent: null
+            not_intent: null
+            role: null
+            type: from_entity
+          - intent: []
+            not_intent: []
+            type: from_text
+        name: phone-number
+        utter_on_new_valid_slot: false
+      - filling:
+          - intent: []
+            not_intent: []
+            type: from_text
+        name: first_name_phone
+        utter_on_new_valid_slot: true
+    updatedAt: 1624392046680
   scholarship_form:
     collect_in_botfront: null
     description: null
@@ -1478,12 +1513,6 @@ responses:
       text: >-
         Please provide your name and phone number and we will call you within 5
         minutes
-  utter_Gpgur27XR:
-    - language: en
-      metadata: null
-      text: >-
-        What is your name and phone and we will give you call within the next
-        hour
   utter_MEzWeol10:
     - language: en
       metadata: null
@@ -1509,7 +1538,7 @@ responses:
           pageEvents:
             - event: click
               payload: /next
-              selector: 'div#render-target textarea'
+              selector: 'div#rasaWebchatPro textarea'
         userInput: show
       quick_replies:
         - title: PST
@@ -1723,6 +1752,10 @@ responses:
       metadata: null
       text: Please describe your current financial situation
   utter_ask_first_name:
+    - language: en
+      metadata: null
+      text: What is your first name?
+  utter_ask_first_name_phone:
     - language: en
       metadata: null
       text: What is your first name?
@@ -1998,7 +2031,7 @@ responses:
   utter_ask_phone-number:
     - language: en
       metadata: null
-      text: What is your phone?
+      text: What is your phone and we will give you a call within the next hour
   utter_ask_reason:
     - language: en
       metadata:
@@ -2136,7 +2169,7 @@ responses:
           pageEvents:
             - event: click
               payload: /next
-              selector: 'div#render-target textarea'
+              selector: 'div#rasaWebchatPro textarea'
         userInput: show
       quick_replies:
         - title: PST
@@ -2186,7 +2219,7 @@ responses:
         - payload: '/inform{"want_meditation_experience":"15"}'
           title: 15 min - dive in fully
           type: postback
-        - payload: '/inform{"want_meditation_experience":"no"}'
+        - payload: '/basics.no{"want_meditation_experience":"no"}'
           title: 'No'
           type: postback
       language: en
@@ -2196,7 +2229,7 @@ responses:
         linkTarget: _blank
         pageChangeCallbacks: null
         pageEventCallbacks: null
-        userInput: disable
+        userInput: show
       text: Would you like to get a taste of the amazing SKY meditation?
   utter_ask_want_talk:
     - language: en
@@ -2322,13 +2355,20 @@ responses:
       text: >-
         Great! We will email you the details on how to access the
         **Masterclass**
+  utter_valid_first_name_phone:
+    - language: en
+      metadata: null
+      text: 'Thank you. We will give you a call from this number: 800-234-2344'
   utter_valid_phone-number:
     - language: en
       metadata: null
-      text: Thank you. We will give you a call within next 5 minutes
+      text: ''
   utter_valid_timezone:
     - language: en
       text: Thank you
+  utter_vxBSWxvXB:
+    - language: en
+      text: Anything else I can help with?
   utter_wiGz5IbHQ:
     - language: en
       text: >-
@@ -2387,6 +2427,8 @@ slots:
   financial_situation:
     type: text
   first_name:
+    type: text
+  first_name_phone:
     type: text
   gain:
     type: categorical
