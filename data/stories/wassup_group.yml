@@ -93,7 +93,6 @@ stories:
       - slot_was_set:
           - insight: continue
       - action: utter_zV8o1XCz3
-      - action: utter_UqjeP9kb4
       - action: utter_-DujDtaQr
       - action: utter_tNVAXLyjC
       - checkpoint: link-to-Intro Form Story/a76968e0-ef9f-4634-949d-e6d6ba154e38
@@ -110,14 +109,6 @@ stories:
       - action: utter_fx1Ooi9Pr
       - action: utter_uiSLv0IGh
       - action: utter_sx0glX_sU
-    metadata:
-      group: Wassup group
-  - story: Intro Form Story__Call
-    steps:
-      - checkpoint: Intro_Form_Story__branches
-      - slot_was_set:
-          - registered: true
-      - action: utter_vxBSWxvXB
     metadata:
       group: Wassup group
   - story: Intro Form Story__different
@@ -150,6 +141,15 @@ stories:
       - slot_was_set:
           - handle_different: true
       - action: utter_swGZIdCWD
+    metadata:
+      group: Wassup group
+  - story: Intro Form Story__Signup
+    steps:
+      - checkpoint: Intro_Form_Story__branches
+      - slot_was_set:
+          - handle_different: false
+      - action: utter_jUWeQThR6
+      - action: action_show_courses
     metadata:
       group: Wassup group
   - story: Intro Form Story__What is SKY

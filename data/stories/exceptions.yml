@@ -1,23 +1,31 @@
 stories:
   - story: Anything else to help with
     steps:
-      - checkpoint: >-
-          link-to-Anything else to help
-          with/f11098fc-86b3-496e-8a2b-e9839237ae3d
       - intent: next
         entities: []
       - action: utter_fPTfktgDo
     metadata:
       group: Exceptions
-  - story: Sign up
+  - story: Show me courses by timezones
+    steps:
+      - intent: courses
+        user: Show me courses by timezone
+        entities: []
+      - action: utter_timezone
+    metadata:
+      group: Exceptions
+  - story: Signup
     steps:
       - intent: signup
-        user: I want to sign up
+        user: I want to register
         entities: []
-      - action: utter_NSfT8viOG
-      - checkpoint: >-
-          link-to-Anything else to help
-          with/f11098fc-86b3-496e-8a2b-e9839237ae3d
+      - action: utter_eFRtis7dW
+      - intent: time
+        user: 23 June
+        entities:
+          - time: June
+          - time: '2022-06-23T00:00:00.000-07:00'
+      - action: action_show_courses
     metadata:
       group: Exceptions
 rules: []

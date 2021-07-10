@@ -36,6 +36,13 @@ stories:
       - action: utter_Q2n0XuA0o
     metadata:
       group: Train less group
+  - story: Other issues
+    steps:
+      - intent: reason
+        entities: []
+      - action: utter_kw_Kt8N3n
+    metadata:
+      group: Train less group
   - story: Pregnancy
     steps:
       - intent: pregnant
@@ -69,6 +76,15 @@ stories:
         user: play some music
         entities: []
       - action: utter_6oL6NLH6q
+    metadata:
+      group: Train less group
+  - story: Sleep issues
+    steps:
+      - intent: sleep
+        user: I have trouble sleeping
+        entities:
+          - reason: sleeping
+      - action: utter_gmDulO-Py
     metadata:
       group: Train less group
 rules:

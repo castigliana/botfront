@@ -1,4 +1,75 @@
 cards:
+  - name: Conversations Funnel
+    description: ''
+    type: conversationsFunnel
+    visible: true
+    startDate: '2021-06-30T07:00:00.000Z'
+    endDate: '2021-07-07T06:59:59.999Z'
+    chartType: bar
+    valueType: absolute
+    includeIntents: null
+    excludeIntents: null
+    includeActions: null
+    excludeActions: null
+    conversationLength: null
+    userInitiatedConversations: false
+    triggerConversations: false
+    selectedSequence:
+      - name: get_started
+        excluded: false
+        type: intent
+        __typename: Step
+    wide: null
+    showDenominator: null
+    limit: null
+    eventFilter: null
+    eventFilterOperator: null
+    __typename: AnalyticsCard
+  - name: Top Triggers
+    description: ''
+    type: triggerFrequencies
+    visible: true
+    startDate: '2021-04-08T07:00:00.000Z'
+    endDate: '2021-07-07T06:59:59.999Z'
+    chartType: bar
+    valueType: absolute
+    includeIntents: null
+    excludeIntents: null
+    includeActions: null
+    excludeActions: null
+    conversationLength: null
+    userInitiatedConversations: false
+    triggerConversations: true
+    selectedSequence: null
+    wide: null
+    showDenominator: null
+    limit: null
+    eventFilter: null
+    eventFilterOperator: null
+    __typename: AnalyticsCard
+  - name: Top Intents
+    description: ''
+    type: intentFrequencies
+    visible: true
+    startDate: '2021-06-30T07:00:00.000Z'
+    endDate: '2021-07-07T06:59:59.999Z'
+    chartType: bar
+    valueType: absolute
+    includeIntents: null
+    excludeIntents:
+      - get_started
+    includeActions: null
+    excludeActions: null
+    conversationLength: null
+    userInitiatedConversations: true
+    triggerConversations: false
+    selectedSequence: null
+    wide: null
+    showDenominator: null
+    limit: null
+    eventFilter: null
+    eventFilterOperator: null
+    __typename: AnalyticsCard
   - name: Visits & Engagement
     description: >-
       Visits: the total number of conversations in a given temporal window.
@@ -94,8 +165,8 @@ cards:
     description: The number of conversations in which a fallback action was triggered.
     type: conversationCounts
     visible: true
-    startDate: '2021-04-11T00:00:00.000Z'
-    endDate: '2021-04-17T23:59:59.999Z'
+    startDate: '2021-04-08T07:00:00.000Z'
+    endDate: '2021-07-07T06:59:59.999Z'
     chartType: line
     valueType: absolute
     includeIntents: null
@@ -120,8 +191,8 @@ cards:
     description: The number of times a fallback action was triggered.
     type: actionCounts
     visible: true
-    startDate: '2021-04-11T00:00:00.000Z'
-    endDate: '2021-04-17T23:59:59.999Z'
+    startDate: '2021-04-08T07:00:00.000Z'
+    endDate: '2021-07-07T06:59:59.999Z'
     chartType: line
     valueType: absolute
     includeIntents: null

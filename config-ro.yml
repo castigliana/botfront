@@ -17,7 +17,7 @@ language: ro
 
 policies:
   - name: TEDPolicy
-    epochs: 100
+    epochs: 200
     max_history: 5
     constrain_similarities: True
     model_confidence: cosine

@@ -14,7 +14,7 @@ pipeline:
     dimensions:
       - email
       - number
-      - date
+      - time
       - amount-of-money
       - phone-number
   - name: >-
@@ -25,7 +25,7 @@ language: en
 
 policies:
   - name: TEDPolicy
-    epochs: 100
+    epochs: 200
     max_history: 5
     constrain_similarities: True
     model_confidence: cosine

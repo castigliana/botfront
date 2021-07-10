@@ -545,10 +545,6 @@ nlu:
   - text: |
       How [SKY]{"entity": "programs", "role": "own"} compares to [mindfulness]{"entity": "programs", "role": "other"}
   - text: |
-      How about [sleep](reason)?
-    metadata:
-      canonical: true
-  - text: |
       How is [SKY]{"entity": "programs", "role": "own"} different from  [Headspace]{"entity": "programs", "role": "other"}
   - text: |
       How is [SKY]{"entity": "programs", "role": "own"} different from [Calm]{"entity": "programs", "role": "other"}
@@ -689,38 +685,93 @@ nlu:
 - intent: feedback.bothered
   metadata:
     language: en
-  examples: |
-    - I didn't feel anything
-    - I didn't like it
-    - I hate it
-    - no impact
-    - not so good
-    - so so
-    - terrible
+  examples:
+  - text: |
+      I didn't feel anything
+  - text: |
+      I didn't like it
+  - text: |
+      I hate it
+  - text: |
+      no impact
+  - text: |
+      not so good
+  - text: |
+      so so
+    metadata:
+      canonical: true
+  - text: |
+      terrible
 - intent: feedback.good
   metadata:
     language: en
-  examples: |
-    - It was ok
-    - good
+  examples:
+  - text: |
+      I felt some tingling
+  - text: |
+      It was ok
+  - text: |
+      good
+    metadata:
+      canonical: true
+  - text: |
+      less thoughts
+  - text: |
+      tingling
 - intent: feedback.great
   metadata:
     language: en
-  examples: |
-    - I enjoyed it
-    - I enjoyed the breathing technique
-    - I enjoyed the meditation
-    - I enjoyed the technique
-    - I felt great
-    - I felt wonderful
-    - I loved it
-    - I loved the meditation
-    - great
-    - great meditation
-    - love it
-    - loved it
-    - [relaxed](gain)
-    - wonderful
+  examples:
+  - text: |
+      I enjoyed it
+  - text: |
+      I enjoyed the breathing technique
+  - text: |
+      I enjoyed the meditation
+  - text: |
+      I enjoyed the technique
+  - text: |
+      I felt energized
+  - text: |
+      I felt great
+  - text: |
+      I felt wonderful
+  - text: |
+      I loved it
+  - text: |
+      I loved the meditation
+  - text: |
+      alert
+  - text: |
+      energized
+  - text: |
+      fewer thoughts
+  - text: |
+      focused
+  - text: |
+      full of energy
+  - text: |
+      great
+    metadata:
+      canonical: true
+  - text: |
+      great meditation
+  - text: |
+      love it
+  - text: |
+      loved it
+  - text: |
+      more alert
+  - text: |
+      more clarity
+  - text: |
+      my mind is focused
+  - text: |
+      no thoughts
+  - text: |
+      relaxed
+  - text: |
+      wonderful
 - intent: finance.issue
   metadata:
     language: en
@@ -842,8 +893,6 @@ nlu:
   - text: |
       [contentment](gain)
   - text: |
-      [fewer thoughts](gain)
-  - text: |
       [free](gain)
   - text: |
       [happiness](gain)
@@ -851,8 +900,6 @@ nlu:
       i want [peace](gain)
   - text: |
       [less stress](gain)
-  - text: |
-      [less thoughts](gain)
   - text: |
       [peace](gain) of mind
   - text: |
@@ -903,6 +950,8 @@ nlu:
       Maria
     metadata:
       canonical: true
+  - text: |
+      Show me courses by timezone
 - intent: installment
   metadata:
     language: en
@@ -1028,8 +1077,6 @@ nlu:
   - text: |
       I can't deal with [stress](reason)
   - text: |
-      I can't [sleep](reason)
-  - text: |
       I feel [anxiety](reason)
   - text: |
       I feel [anxious](reason)
@@ -1044,9 +1091,15 @@ nlu:
   - text: |
       I have back issues
   - text: |
+      I have [depression](reason)
+    metadata:
+      canonical: true
+  - text: |
       I have other [reason](reason)
   - text: |
       I have [relationship](reason) problems
+  - text: |
+      I have trouble [sleeping]{"entity": "reason", "role": "sleep"}
   - text: |
       I observed that I don't [breathe](reason)
   - text: |
@@ -1143,8 +1196,14 @@ nlu:
     - how can I register
     - how can I sign up?
     - is there a way to sign up
+    - list courses
+    - nearby courses
+    - nearby workshops
     - register
     - register me
+    - show me courses
+    - show me courses nearby
+    - show me workshops
     - sign me up
     - what I need to do to register
     - what I need to do to sign up
@@ -1184,6 +1243,38 @@ nlu:
       Why it takes so [much](finance) time
     metadata:
       canonical: true
+- intent: sleep
+  metadata:
+    language: en
+  examples:
+  - text: |
+      Any advise for better [sleep](reason)?
+  - text: |
+      I can't [sleep](reason)
+    metadata:
+      canonical: true
+  - text: |
+      I have sleep problems
+  - text: |
+      What do you recommend for better [sleep](reason)
+- intent: time
+  metadata:
+    language: en
+  examples:
+  - text: |
+      [15 oct](time)
+  - text: |
+      23 [June](time)
+  - text: |
+      [23 jun](time)
+    metadata:
+      canonical: true
+  - text: |
+      [24 september](time)
+  - text: |
+      [June](time) 13
+  - text: |
+      [tomorrow](time)
 - intent: try.meditation
   metadata:
     language: en
