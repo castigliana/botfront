@@ -171,7 +171,7 @@ class ShowCourses(Action):
 
         dispatcher.utter_message(attachment=carousel)
 
-        result = json.dumps(carousel)
+        #result = json.dumps(carousel)
         #print(json.dumps(carousel, indent=4, sort_keys=True))
 
         # printing result as a string
